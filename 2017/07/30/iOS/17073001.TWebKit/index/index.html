@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/icons/logo.svg?v=5.1.3" color="#222">
+
+
+  <link rel="manifest" href="/icons/manifest.json">
+
+
+  <meta name="msapplication-config" content="/icons/browserconfig.xml" />
+
+
+
+  <meta name="keywords" content="iOS,GitHub," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="GitHub 地址： https://github.com/tobedefined/TWebKit     很久之前写的一个很简单的库，最近整理了一下发到github了  特点 兼容Objective-C和swift  TWebView 支持自动根据系统版本选择使用UIWebView还是WKWebView加载网页 使用方法简单，与UIWebView的使用方法极其类似，简化WKWebView的使用">
+<meta name="keywords" content="iOS,GitHub">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TWebKit">
+<meta property="og:url" content="http://tbd.tech/2017/07/30/iOS/17073001.TWebKit/index/index.html">
+<meta property="og:site_name" content="　 TBD&#39;s Blog 　">
+<meta property="og:description" content="GitHub 地址： https://github.com/tobedefined/TWebKit     很久之前写的一个很简单的库，最近整理了一下发到github了  特点 兼容Objective-C和swift  TWebView 支持自动根据系统版本选择使用UIWebView还是WKWebView加载网页 使用方法简单，与UIWebView的使用方法极其类似，简化WKWebView的使用">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-04-04T03:14:43.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TWebKit">
+<meta name="twitter:description" content="GitHub 地址： https://github.com/tobedefined/TWebKit     很久之前写的一个很简单的库，最近整理了一下发到github了  特点 兼容Objective-C和swift  TWebView 支持自动根据系统版本选择使用UIWebView还是WKWebView加载网页 使用方法简单，与UIWebView的使用方法极其类似，简化WKWebView的使用">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: 'undefined',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: "",
+      labels: ""
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://tbd.tech/2017/07/30/iOS/17073001.TWebKit/index/"/>
+
+
+
+
+
+  <title>TWebKit | 　 TBD's Blog 　</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">　 TBD's Blog 　</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">To Be Defined</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-my-gitbook">
+          <a href="/gitbook/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-bookmark"></i> <br />
+            
+            My GitBook
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://tbd.tech/2017/07/30/iOS/17073001.TWebKit/index/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="TBD">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/avatars/avatar1.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="　 TBD's Blog 　">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">TWebKit</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-30T10:16:55+00:00">
+                2017-07-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/07/30/iOS/17073001.TWebKit/index/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/07/30/iOS/17073001.TWebKit/index/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <div align="center"><br><br>GitHub 地址： <a href="https://github.com/tobedefined/TWebKit" target="_blank" rel="noopener">https://github.com/tobedefined/TWebKit</a><br><br></div>
+
+
+
+<blockquote>
+<p>很久之前写的一个很简单的库，最近整理了一下发到github了</p>
+</blockquote>
+<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><blockquote>
+<p>兼容<code>Objective-C</code>和<code>swift</code></p>
+</blockquote>
+<h4 id="TWebView"><a href="#TWebView" class="headerlink" title="TWebView"></a>TWebView</h4><ul>
+<li>支持自动根据系统版本选择使用<code>UIWebView</code>还是<code>WKWebView</code>加载网页</li>
+<li>使用方法简单，与<code>UIWebView</code>的使用方法极其类似，简化<code>WKWebView</code>的使用</li>
+<li>双代理模式，支持使用通用的代理<code>commonDelegate</code>（通用代理的类建议使用singleton单例模式），也支持同时设置普通的代理<code>delegate</code><blockquote>
+<p>默认情况下普通代理<code>delegate</code>里实现的方法会优先于通用代理<code>commonDelegate</code>里实现的同名方法；</p>
+<p>在普通代理<code>delegate</code>中实现某个方法的情况下不会去调用通用代理<code>commonDelegate</code>中的同名方法。（如果需要可以在普通代理<code>delegate</code>的该方法中使用[webView.commonDelegate  someFunc..]主动调用通用代理<code>commonDelegate</code>的该方法）</p>
+</blockquote>
+</li>
+<li>支持显示<code>ProgressView</code>，<code>UIWebView</code>的Progress使用了<a href="https://github.com/ninjinkun/NJKWebViewProgress" target="_blank" rel="noopener">NJKWebViewProgress</a>中的部分代码进行模拟进度，支持配置ProgressView的颜色</li>
+<li>支持配置是否允许滑动返回(<code>canScrollBack</code>)</li>
+<li>支持配置是否可以放大缩小网页(<code>canScrollChangeSize</code>)</li>
+<li>支持配置是否屏蔽长按链接显示ActionSheet(<code>blockActionSheet</code>)</li>
+<li>支持配置是否屏蔽链接的3DTouch预览(<code>block3DTouch</code>)</li>
+</ul>
+<h4 id="TWebViewController"><a href="#TWebViewController" class="headerlink" title="TWebViewController"></a>TWebViewController</h4><ul>
+<li><code>TWebViewController</code>返回键为后退网页，后退到首个网页则popViewController</li>
+<li><code>TWebViewController</code>点击返回键后退网页则会出现关闭controller的按钮</li>
+<li><code>TWebViewController</code>在Debug包中包含清空缓存和输入网址按钮(自动保存最后一次手动输入的网址)，在Release包中自动屏蔽。</li>
+</ul>
+<h4 id="TWebViewDelegate"><a href="#TWebViewDelegate" class="headerlink" title="TWebViewDelegate"></a>TWebViewDelegate</h4><ul>
+<li>全是<code>@optional</code>的代理方法，更容易使用</li>
+</ul>
+<h3 id="导入项目"><a href="#导入项目" class="headerlink" title="导入项目"></a>导入项目</h3><h4 id="CocoaPods"><a href="#CocoaPods" class="headerlink" title="CocoaPods"></a>CocoaPods</h4><p><a href="https://cocoapods.org/" target="_blank" rel="noopener"><code>CocoaPods</code></a>是一个Cocoa项目管理器。你可以使用以下命令去安装<code>CocoaPods</code>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gem install cocoapods</span><br></pre></td></tr></table></figure>
+<p>要使用CocoaPods将<code>TWebKit</code>集成到您的Xcode项目中，请在<code>Podfile</code>中加入：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">source <span class="string">'https://github.com/CocoaPods/Specs.git'</span></span><br><span class="line">platform <span class="symbol">:ios</span>, <span class="string">'6.0'</span></span><br><span class="line">use_frameworks!</span><br><span class="line"></span><br><span class="line">target <span class="string">'&lt;Your Target Name&gt;'</span> <span class="keyword">do</span></span><br><span class="line">    pod <span class="string">'TWebKit'</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>然后运行一下命令:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pod install</span><br></pre></td></tr></table></figure>
+<h4 id="Carthage"><a href="#Carthage" class="headerlink" title="Carthage"></a>Carthage</h4><p><a href="https://github.com/Carthage/Carthage" target="_blank" rel="noopener"><code>Carthage</code></a>是一个去中心化的依赖管理器，它构建并提供所使用的库的framework。</p>
+<p>你可以使用 <a href="https://brew.sh/" target="_blank" rel="noopener"><code>Homebrew</code></a>并运行下面的命令安装Carthage</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ brew update</span><br><span class="line">$ brew install carthage</span><br></pre></td></tr></table></figure>
+<p>要将<code>TWebKit</code>集成到使用Carthage的Xcode项目中，请在<code>Cartfile</code>中加入：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">github <span class="string">"tobedefined/TWebKit"</span> ~&gt; <span class="number">1.0</span>.<span class="number">3</span></span><br></pre></td></tr></table></figure>
+<p>运行<code>carthage update</code>构建framework，并将编译的<code>TWebKit.framework</code>拖入Xcode项目中。</p>
+<h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><ul>
+<li>swift</li>
+</ul>
+<p>在swift的<code>&lt;Your Target Name&gt;-Bridging-Header.h</code>中加入</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#import <span class="meta-string">&lt;TWebKit/TWebKit.h&gt;</span></span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>Objective-C</li>
+</ul>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#import <span class="meta-string">&lt;TWebKit/TWebKit.h&gt;</span></span></span><br></pre></td></tr></table></figure>
+<p>你可以在demo中看具体的使用方法，下面是具体的介绍</p>
+<h4 id="TWebView-1"><a href="#TWebView-1" class="headerlink" title="TWebView"></a>TWebView</h4><p>大部分参数和方法与UIWebView的参数相同，使用方式也相同，下面介绍一些不同的参数和方法。</p>
+<h5 id="property"><a href="#property" class="headerlink" title="property"></a>property</h5><ul>
+<li>delegate：<code>id &lt;TWebViewDelegate&gt;</code>，代理，遵守<code>TWebViewDelegate</code>协议的任何对象，若设置，则其实现的方法优先级高于commonDelegate中的方法</li>
+<li>commonDelegate：<code>id &lt;TWebViewDelegate&gt;</code>，通用代理，遵守<code>TWebViewDelegate</code>协议的任何对象，建议使用singleton的对象作为通用代理</li>
+<li>showProgress：<code>BOOL</code>，<code>getter=isShowProgress</code>，是否显示进度条</li>
+<li>progressTintColor：<code>UIColor</code>，进度条颜色，配置之后会使<code>showProgress</code>为<code>YES/true</code></li>
+<li>canScrollBack：<code>BOOL</code>，iOS8+支持，是否可以滑动返回上一个网页</li>
+<li>canScrollChangeSize：<code>BOOL</code>，iOS8+支持，是否可以拖动改变网页大小</li>
+<li>blockActionSheet：<code>BOOL</code>，iOS8+支持，是否屏蔽长按链接出现actionSheet</li>
+<li>block3DTouch：<code>BOOL</code>，iOS9+支持，是否屏蔽3DTouch预览链接</li>
+<li>confirmText：<code>NSString</code>，网页弹出框的确定按钮文字</li>
+<li>cancelText：<code>NSString</code>，网页弹出框的取消按钮文字</li>
+<li>lodingDefaultTitle：<code>NSString</code>，网页加载中默认返回的title文字</li>
+<li>successDefaultTitle：<code>NSString</code>，网页加载成功默认返回的title文字</li>
+<li>failedDefaultTitle：<code>NSString</code>，网页加载失败默认返回的title文字</li>
+</ul>
+<h5 id="function"><a href="#function" class="headerlink" title="function"></a>function</h5><ul>
+<li><p><code>- (instancetype)init</code></p>
+<blockquote>
+<p>创建一个默认的<code>TWebViewConfig</code>对象，并调用<code>- (instancetype)initWithConfig:(TWebViewConfig *)config</code></p>
+</blockquote>
+</li>
+<li><p><code>- (instancetype)initWithConfig:(TWebViewConfig *)config</code></p>
+<blockquote>
+<p>使用<code>config</code>中的参数，进行初始化创建<code>TWebView</code></p>
+</blockquote>
+</li>
+<li><p><code>- (void)clearCache</code></p>
+<blockquote>
+<p>清空cache和cookie</p>
+</blockquote>
+</li>
+<li><p><code>- (void)resetCookieForceOverride:(BOOL)forceOverride</code></p>
+<blockquote>
+<p>取出<code>NSHTTPCookieStorage</code>中的cookies设置TWebView的cookie，<code>forceOverride</code>参数控制是否强制使用<code>NSHTTPCookieStorage</code>中的cookie值重设TWebView之前存在的同名的cookie</p>
+</blockquote>
+</li>
+<li><p><code>+ (nullable NSString *)getJavascriptStringWithFunctionName:(NSString *)function data:(id)data</code></p>
+<blockquote>
+<p>类方法提供拼接JavaScript函数功能，<code>function</code>参数为要访问的JavaScript的方法名(不需要添加括号)，<code>data</code>参数可以为<code>JSON Object</code>或者为普通的<code>NSString</code>，会自动进行转换拼接；返回拼接后的函数调用字符串。</p>
+</blockquote>
+</li>
+<li><p><code>- (void)runJavascript:(NSString *)js completion:(void (^__nullable)(id obj, NSError *error))completion</code></p>
+<blockquote>
+<p>运行JavaScript函数，与网页进行交互，<code>js</code>参数为运行的JavaScript代码，<code>completion</code>参数为回调。</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="TWebViewConfig"><a href="#TWebViewConfig" class="headerlink" title="TWebViewConfig"></a>TWebViewConfig</h4><p>为了将配置参数更加清晰，所以添加了这个类，参数与<code>TWebView</code>的各个配置参数对应，你可以使用<code>TWebViewConfig</code>创建配置，然后使用配置来创建<code>TWebView</code>；也可以直接创建<code>TWebView</code>，然后对创建的对象进行参数赋值。</p>
+<table>
+<thead>
+<tr>
+<th>TWebViewConfig参数</th>
+<th>-&gt;</th>
+<th style="text-align:right">TWebView参数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>webViewCommonDelegate</td>
+<td>-&gt;</td>
+<td style="text-align:right">commonDelegate</td>
+</tr>
+<tr>
+<td>webViewDelegate</td>
+<td>-&gt;</td>
+<td style="text-align:right">delegate</td>
+</tr>
+<tr>
+<td>forceOverrideCookie</td>
+<td>-&gt;</td>
+<td style="text-align:right">forceOverrideCookie</td>
+</tr>
+<tr>
+<td>showProgressView</td>
+<td>-&gt;</td>
+<td style="text-align:right">showProgress</td>
+</tr>
+<tr>
+<td>progressTintColor</td>
+<td>-&gt;</td>
+<td style="text-align:right">progressTintColor</td>
+</tr>
+<tr>
+<td>canScrollChangeSize</td>
+<td>-&gt;</td>
+<td style="text-align:right">canScrollChangeSize</td>
+</tr>
+<tr>
+<td>confirmText</td>
+<td>-&gt;</td>
+<td style="text-align:right">confirmText</td>
+</tr>
+<tr>
+<td>cancelText</td>
+<td>-&gt;</td>
+<td style="text-align:right">cancelText</td>
+</tr>
+<tr>
+<td>lodingDefaultTitle</td>
+<td>-&gt;</td>
+<td style="text-align:right">lodingDefaultTitle</td>
+</tr>
+<tr>
+<td>successDefaultTitle</td>
+<td>-&gt;</td>
+<td style="text-align:right">successDefaultTitle</td>
+</tr>
+<tr>
+<td>failedDefaultTitle</td>
+<td>-&gt;</td>
+<td style="text-align:right">failedDefaultTitle</td>
+</tr>
+<tr>
+<td>canScrollBack</td>
+<td>-&gt;</td>
+<td style="text-align:right">canScrollBack</td>
+</tr>
+<tr>
+<td>blockActionSheet</td>
+<td>-&gt;</td>
+<td style="text-align:right">blockActionSheet</td>
+</tr>
+<tr>
+<td>block3DTouch</td>
+<td>-&gt;</td>
+<td style="text-align:right">block3DTouch</td>
+</tr>
+</tbody>
+</table>
+<h4 id="TWebViewDelegate-1"><a href="#TWebViewDelegate-1" class="headerlink" title="TWebViewDelegate"></a>TWebViewDelegate</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSUInteger</span>, TWebViewLoadStatus) &#123;</span><br><span class="line">    TWebViewLoadStatusIsLoding = <span class="number">1</span>,</span><br><span class="line">    TWebViewLoadStatusSuccess  = <span class="number">2</span>,</span><br><span class="line">    TWebViewLoadStatusFailed   = <span class="number">3</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@protocol</span> <span class="title">TWebViewDelegate</span> &lt;<span class="title">NSObject</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">@optional</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 是否可以加载网页</span></span><br><span class="line">- (<span class="built_in">BOOL</span>)webView:(TWebView *)webView shouldStartLoadRequest:(<span class="built_in">NSURLRequest</span> *)request;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 开始加载网页</span></span><br><span class="line">- (<span class="keyword">void</span>)webView:(TWebView *)webView didStartLoadRequest:(<span class="built_in">NSURLRequest</span> *)request;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 加载网页成功</span></span><br><span class="line">- (<span class="keyword">void</span>)webView:(TWebView *)webView didFinishLoadRequest:(<span class="built_in">NSURLRequest</span> *)request;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 加载网页失败</span></span><br><span class="line">- (<span class="keyword">void</span>)webView:(TWebView *)webView didFailedLoadRequest:(<span class="built_in">NSURLRequest</span> *)request withError:(<span class="built_in">NSError</span> *)error;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 当前状态：status，当前默认使用的title，</span></span><br><span class="line"><span class="comment">// 可以选择使用根据状态判断设定ViewController的title。或者可以将title字段设为ViewController的title。</span></span><br><span class="line"><span class="comment">// TWebViewLoadStatusIsLoding =&gt; 返回TWebView的lodingDefaultTitle</span></span><br><span class="line"><span class="comment">// TWebViewLoadStatusSuccess  =&gt; 获取网页的title，如果不为空返回；为空返回TWebView的successDefaultTitle</span></span><br><span class="line"><span class="comment">// TWebViewLoadStatusFailed   =&gt; 返回TWebView的failedDefaultTitle</span></span><br><span class="line">- (<span class="keyword">void</span>)webView:(TWebView *)webView loadStatus:(TWebViewLoadStatus)status title:(<span class="built_in">NSString</span> *)title;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
+<h4 id="TWebViewController-1"><a href="#TWebViewController-1" class="headerlink" title="TWebViewController"></a>TWebViewController</h4><blockquote>
+<p>是否显示清除缓存和输入网址的按钮为自动控制（Debug显示，Release不显示），无需配置</p>
+</blockquote>
+<h5 id="property-1"><a href="#property-1" class="headerlink" title="property"></a>property</h5><ul>
+<li>webView：<code>TWebView</code>，<code>TWebViewController</code>中的<code>TWebView</code>对象，你可以修改一些属性符合你的配置要求。</li>
+<li>navTitle：<code>NSString</code>，默认的navTitle，如果设置，则覆盖<code>- (void)webView:(TWebView *)webView loadStatus:(TWebViewLoadStatus)status title:(NSString *)title</code>回调，始终显示<code>navTitle</code>。</li>
+<li>backImage：<code>UIImage</code>，默认使用<code>TWebKit.bundle</code>中的<code>back.png</code>，可以自定义设置返回按钮。</li>
+</ul>
+<h5 id="function-1"><a href="#function-1" class="headerlink" title="function"></a>function</h5><ul>
+<li><p><code>- (instancetype)initWithConfig:(TWebViewConfig *)config</code></p>
+<blockquote>
+<p>根据<code>TWebViewConfig</code>配置来创建<code>TWebViewController</code>。</p>
+</blockquote>
+</li>
+<li><p><code>- (void)loadURLFromString:(NSString *)urlString</code></p>
+<blockquote>
+<p>加载网址<code>urlString</code></p>
+</blockquote>
+</li>
+<li><p><code>- (void)loadURLAndAutoConversionFromString:(NSString *)urlString</code></p>
+<blockquote>
+<p>加载网址<code>urlString</code>，会对urlString进行转码判断等操作，具体详见<code>NSString *trueURLString(NSString *urlString)</code></p>
+</blockquote>
+</li>
+<li><p><code>- (void)resetWebViewCookieForceOverride:(BOOL)forceOverride</code></p>
+<blockquote>
+<p>调用<code>TWebView</code>的<code>- (void)resetCookieForceOverride:(BOOL)forceOverride</code>方法，重设cookie</p>
+</blockquote>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/iOS/" rel="tag"># iOS</a>
+          
+            <a href="/tags/GitHub/" rel="tag"># GitHub</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/07/21/iOS/17072101.Swift 中的 inout & UnsafeMutablePointer 指针/index/" rel="next" title="Swift 中的 inout & UnsafeMutablePointer 指针">
+                <i class="fa fa-chevron-left"></i> Swift 中的 inout & UnsafeMutablePointer 指针
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/04/iOS/17080401.GCD/index/" rel="prev" title="GCD">
+                GCD <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  
+    <div class="comments" id="comments">
+      <div id="hypercomments_widget"></div>
+    </div>
+  
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/avatars/avatar1.jpg"
+                alt="TBD" />
+            
+              <p class="site-author-name" itemprop="name">TBD</p>
+              <p class="site-description motion-element" itemprop="description">一个梦想着改变世界的小程序猿……</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/tobedefined" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#特点"><span class="nav-number">1.</span> <span class="nav-text">特点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#TWebView"><span class="nav-number">1.1.</span> <span class="nav-text">TWebView</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TWebViewController"><span class="nav-number">1.2.</span> <span class="nav-text">TWebViewController</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TWebViewDelegate"><span class="nav-number">1.3.</span> <span class="nav-text">TWebViewDelegate</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#导入项目"><span class="nav-number">2.</span> <span class="nav-text">导入项目</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CocoaPods"><span class="nav-number">2.1.</span> <span class="nav-text">CocoaPods</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Carthage"><span class="nav-number">2.2.</span> <span class="nav-text">Carthage</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用方法"><span class="nav-number">3.</span> <span class="nav-text">使用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#TWebView-1"><span class="nav-number">3.1.</span> <span class="nav-text">TWebView</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#property"><span class="nav-number">3.1.1.</span> <span class="nav-text">property</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#function"><span class="nav-number">3.1.2.</span> <span class="nav-text">function</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TWebViewConfig"><span class="nav-number">3.2.</span> <span class="nav-text">TWebViewConfig</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TWebViewDelegate-1"><span class="nav-number">3.3.</span> <span class="nav-text">TWebViewDelegate</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TWebViewController-1"><span class="nav-number">3.4.</span> <span class="nav-text">TWebViewController</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#property-1"><span class="nav-number">3.4.1.</span> <span class="nav-text">property</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#function-1"><span class="nav-number">3.4.2.</span> <span class="nav-text">function</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">TBD</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a>, Hosted by <a class="theme-link" target="_blank" href="https://pages.coding.net/">Coding Pages</a> And <a class="theme-link" target="_blank" href="https://pages.github.com/">GitHub Pages</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.3</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+		<script type="text/javascript">
+		_hcwp = window._hcwp || [];
+
+		_hcwp.push({widget:"Bloggerstream", widget_id: 93352, selector:".hc-comment-count", label: "{\%COUNT%\}" });
+
+		
+		_hcwp.push({widget:"Stream", widget_id: 93352, xid: "2017/07/30/iOS/17073001.TWebKit/index/"});
+		
+
+		(function() {
+		if("HC_LOAD_INIT" in window)return;
+		HC_LOAD_INIT = true;
+		var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+		var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+		hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/93352/"+lang+"/widget.js";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hcc, s.nextSibling);
+		})();
+		</script>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('-1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
