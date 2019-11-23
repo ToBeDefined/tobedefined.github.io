@@ -1,147 +1,61 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next mist use-motion" lang="zh-CN">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-
-
-
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png?v=6.3.0">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png?v=6.3.0">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png?v=6.3.0">
-
-
-  <link rel="mask-icon" href="/icons/logo.svg?v=6.3.0" color="#222">
-
-
+<meta name="generator" content="Hexo 3.7.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+  <link rel="mask-icon" href="/icons/logo.svg" color="#222">
   <link rel="manifest" href="/icons/manifest.json">
+  <meta name="msapplication-config" content="/icons/browserconfig.xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
 
 
-  <meta name="msapplication-config" content="/icons/browserconfig.xml" />
-
-
-
-
-
-
-
-<script type="text/javascript" id="hexo.configurations">
+<script id="hexo-configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
     scheme: 'Mist',
-    version: '6.3.0',
-    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"right","display":"hide","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: false,
-    fastclick: false,
+    mediumzoom: false,
     lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    pangu: false,
     algolia: {
-      applicationID: '',
+      appID: '',
       apiKey: '',
       indexName: '',
-      hits: "",
-      labels: ""
-    }
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    translation: {
+      copy_button: '复制',
+      copy_success: '复制成功',
+      copy_failure: '复制失败'
+    },
+    sidebarPadding: 40
   };
 </script>
-
-
-  
-
-
-
 
   <meta name="description" content="一个梦想着改变世界的小程序猿……">
 <meta property="og:type" content="website">
 <meta property="og:title" content="　 TBD&#39;s Blog 　">
-<meta property="og:url" content="http://tbd.tech/page/2/index.html">
+<meta property="og:url" content="http://tbd.ink/page/2/index.html">
 <meta property="og:site_name" content="　 TBD&#39;s Blog 　">
 <meta property="og:description" content="一个梦想着改变世界的小程序猿……">
 <meta property="og:locale" content="zh-CN">
@@ -149,18 +63,17 @@
 <meta name="twitter:title" content="　 TBD&#39;s Blog 　">
 <meta name="twitter:description" content="一个梦想着改变世界的小程序猿……">
 
+<link rel="canonical" href="http://tbd.ink/page/2/">
 
 
-
-
-
-  <link rel="canonical" href="http://tbd.tech/page/2/"/>
-
-
-
-<script type="text/javascript" id="page.configurations">
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
+    isHome: true,
+    isPost: false,
+    isPage: false,
+    isArchive: false
   };
 </script>
 
@@ -172,327 +85,192 @@
 
 
 
-
-
-
   <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
-
-  
-  
-    
-  
-
-  <div class="container sidebar-position-left 
-  page-home">
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
 
-    <div class="custom-logo-site-title">
+    <div>
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">　 TBD's Blog 　</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-    
-      
         <p class="site-subtitle">To Be Defined</p>
-      
-    
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
   </div>
 </div>
-
 
 
 <nav class="site-nav">
   
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
-    <a href="/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
-    <a href="/categories/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-tags">
-    <a href="/tags/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
-    <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-my-gitbook">
-    <a href="/gitbook/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-bookmark"></i> <br />My GitBook</a>
+        <li class="menu-item menu-item-my-gitbook">
+
+    <a href="/gitbook/" rel="section"><i class="fa fa-fw fa-bookmark"></i>My GitBook</a>
+
   </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-about">
-    <a href="/about/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
 
-      
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
-        </li>
-      
-    </ul>
-  
-
-  
-    
-
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
 </nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
 
+</div>
+<div class="search-pop-overlay"></div>
 
-
-  
-
-
-
+  </div>
 </div>
     </header>
 
     
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
 
 
-    <main id="main" class="main">
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
           
-          <div id="content" class="content">
+
+          <div class="content">
             
-  <section id="posts" class="posts-expand">
-    
-      
 
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <div class="posts-expand">
+        
   
   
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://tbd.tech/2017/07/05/iOS/17070502.在SDWebImage基础上添加UIImageView扩展使其可以缓存/index/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://tbd.ink/2017/07/05/iOS/17070502.在SDWebImage基础上添加UIImageView扩展使其可以缓存/index/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/avatars/avatar.png">
       <meta itemprop="name" content="TBD">
       <meta itemprop="description" content="一个梦想着改变世界的小程序猿……">
-      <meta itemprop="image" content="/avatars/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="　 TBD's Blog 　">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/05/iOS/17070502.在SDWebImage基础上添加UIImageView扩展使其可以缓存/index/" itemprop="url">
-                  在SDWebImage基础上添加UIImageView扩展使其可以缓存
-                </a>
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/07/05/iOS/17070502.在SDWebImage基础上添加UIImageView扩展使其可以缓存/index/" class="post-title-link" itemprop="url">在SDWebImage基础上添加UIImageView扩展使其可以缓存</a>
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">发表于</span>
 
               <time title="创建时间：2017-07-05 02:37:37" itemprop="dateCreated datePublished" datetime="2017-07-05T02:37:37+00:00">2017-07-05</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
+            </span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-11-22 14:24:32" itemprop="dateModified" datetime="2019-11-22T14:24:32+00:00">2019-11-22</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-23 11:56:14" itemprop="dateModified" datetime="2019-11-23T11:56:14+00:00">2019-11-23</time>
+              </span>
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/随笔/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            <!--noindex-->
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/随笔/" itemprop="url" rel="index">
+                    <span itemprop="name">随笔</span>
+                  </a>
                 </span>
-                <a href="/2017/07/05/iOS/17070502.在SDWebImage基础上添加UIImageView扩展使其可以缓存/index/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count hc-comment-count" data-xid="2017/07/05/iOS/17070502.在SDWebImage基础上添加UIImageView扩展使其可以缓存/index/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-              <!--/noindex-->
-            
-          
-
-          
-          
-
-          
-
-          
+            </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -500,185 +278,82 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           有时候使用SDWebImage对UIImageView的扩展时候会有需要同时缓存图片的需求，这两个扩展对UIImageView和UIImage进行扩展，使用UIImageView.sd_setImageAndCached(with urlString: String, placeholderImage: UIImage? = nil) 可以做到缓存，并且下载图片的operation对应的key与SDWebImage对应的key相同，不会引起冲突。
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/05/iOS/17070502.在SDWebImage基础上添加UIImageView扩展使其可以缓存/index/">
-              阅读全文 &raquo;
-            </a>
-          </div>
+            <div class="post-button">
+              <a class="btn" href="/2017/07/05/iOS/17070502.在SDWebImage基础上添加UIImageView扩展使其可以缓存/index/">
+                阅读全文 &raquo;
+              </a>
+            </div>
           <!--/noindex-->
         
       
     </div>
 
     
-
     
     
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
-
-
-    
-      
-
-  
-
   
   
   
 
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://tbd.tech/2017/07/05/iOS/17070501.iOS屏幕旋转知识点以及实现/index/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://tbd.ink/2017/07/05/iOS/17070501.iOS屏幕旋转知识点以及实现/index/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/avatars/avatar.png">
       <meta itemprop="name" content="TBD">
       <meta itemprop="description" content="一个梦想着改变世界的小程序猿……">
-      <meta itemprop="image" content="/avatars/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="　 TBD's Blog 　">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/05/iOS/17070501.iOS屏幕旋转知识点以及实现/index/" itemprop="url">
-                  iOS屏幕旋转知识点以及实现
-                </a>
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/07/05/iOS/17070501.iOS屏幕旋转知识点以及实现/index/" class="post-title-link" itemprop="url">iOS屏幕旋转知识点以及实现</a>
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">发表于</span>
 
               <time title="创建时间：2017-07-05 01:44:55" itemprop="dateCreated datePublished" datetime="2017-07-05T01:44:55+00:00">2017-07-05</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
+            </span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-11-22 14:24:32" itemprop="dateModified" datetime="2019-11-22T14:24:32+00:00">2019-11-22</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-23 11:56:14" itemprop="dateModified" datetime="2019-11-23T11:56:14+00:00">2019-11-23</time>
+              </span>
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            <!--noindex-->
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
                 </span>
-                <a href="/2017/07/05/iOS/17070501.iOS屏幕旋转知识点以及实现/index/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count hc-comment-count" data-xid="2017/07/05/iOS/17070501.iOS屏幕旋转知识点以及实现/index/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-              <!--/noindex-->
-            
-          
-
-          
-          
-
-          
-
-          
+            </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -686,185 +361,82 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           此文主要针对IOS应用, 是屏幕旋转相关问题的一个总结。 主要内容有：iOS4,5,6-9,10+不同版的适配；强制旋转和自动旋转；个别屏幕可以旋转，其他屏幕不能旋转；以及最终的实现方式。
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/05/iOS/17070501.iOS屏幕旋转知识点以及实现/index/">
-              阅读全文 &raquo;
-            </a>
-          </div>
+            <div class="post-button">
+              <a class="btn" href="/2017/07/05/iOS/17070501.iOS屏幕旋转知识点以及实现/index/">
+                阅读全文 &raquo;
+              </a>
+            </div>
           <!--/noindex-->
         
       
     </div>
 
     
-
     
     
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
-
-
-    
-      
-
-  
-
   
   
   
 
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://tbd.tech/2017/07/04/iOS/17070401.设置NavigationBar隐藏和显示/index/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://tbd.ink/2017/07/04/iOS/17070401.设置NavigationBar隐藏和显示/index/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/avatars/avatar.png">
       <meta itemprop="name" content="TBD">
       <meta itemprop="description" content="一个梦想着改变世界的小程序猿……">
-      <meta itemprop="image" content="/avatars/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="　 TBD's Blog 　">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/04/iOS/17070401.设置NavigationBar隐藏和显示/index/" itemprop="url">
-                  设置NavigationBar隐藏和显示
-                </a>
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/07/04/iOS/17070401.设置NavigationBar隐藏和显示/index/" class="post-title-link" itemprop="url">设置NavigationBar隐藏和显示</a>
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">发表于</span>
 
               <time title="创建时间：2017-07-04 02:37:37" itemprop="dateCreated datePublished" datetime="2017-07-04T02:37:37+00:00">2017-07-04</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
+            </span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-11-22 14:24:32" itemprop="dateModified" datetime="2019-11-22T14:24:32+00:00">2019-11-22</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-23 11:56:14" itemprop="dateModified" datetime="2019-11-23T11:56:14+00:00">2019-11-23</time>
+              </span>
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/随笔/" itemprop="url" rel="index"><span itemprop="name">随笔</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            <!--noindex-->
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/随笔/" itemprop="url" rel="index">
+                    <span itemprop="name">随笔</span>
+                  </a>
                 </span>
-                <a href="/2017/07/04/iOS/17070401.设置NavigationBar隐藏和显示/index/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count hc-comment-count" data-xid="2017/07/04/iOS/17070401.设置NavigationBar隐藏和显示/index/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-              <!--/noindex-->
-            
-          
-
-          
-          
-
-          
-
-          
+            </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -872,185 +444,82 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
           页面隐藏和显示navigation注意要使用setNavigationBarHidden(true, animated: true)方法，直接设置值，防止过于突兀。
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/04/iOS/17070401.设置NavigationBar隐藏和显示/index/">
-              阅读全文 &raquo;
-            </a>
-          </div>
+            <div class="post-button">
+              <a class="btn" href="/2017/07/04/iOS/17070401.设置NavigationBar隐藏和显示/index/">
+                阅读全文 &raquo;
+              </a>
+            </div>
           <!--/noindex-->
         
       
     </div>
 
     
-
     
     
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
-
-
-    
-      
-
-  
-
   
   
   
 
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://tbd.tech/2017/07/03/iOS/17070302.iOS APP如何做才安全/index/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://tbd.ink/2017/07/03/iOS/17070302.iOS APP如何做才安全/index/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/avatars/avatar.png">
       <meta itemprop="name" content="TBD">
       <meta itemprop="description" content="一个梦想着改变世界的小程序猿……">
-      <meta itemprop="image" content="/avatars/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="　 TBD's Blog 　">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/03/iOS/17070302.iOS APP如何做才安全/index/" itemprop="url">
-                  iOS APP如何做才安全
-                </a>
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/07/03/iOS/17070302.iOS APP如何做才安全/index/" class="post-title-link" itemprop="url">iOS APP如何做才安全</a>
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">发表于</span>
 
               <time title="创建时间：2017-07-03 03:42:17" itemprop="dateCreated datePublished" datetime="2017-07-03T03:42:17+00:00">2017-07-03</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
+            </span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-11-22 14:24:32" itemprop="dateModified" datetime="2019-11-22T14:24:32+00:00">2019-11-22</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-23 11:56:14" itemprop="dateModified" datetime="2019-11-23T11:56:14+00:00">2019-11-23</time>
+              </span>
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            <!--noindex-->
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
                 </span>
-                <a href="/2017/07/03/iOS/17070302.iOS APP如何做才安全/index/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count hc-comment-count" data-xid="2017/07/03/iOS/17070302.iOS APP如何做才安全/index/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-              <!--/noindex-->
-            
-          
-
-          
-          
-
-          
-
-          
+            </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -1058,193 +527,85 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
-          
-          本来 写了一篇《iOS 如何做才安全–逆向工程 - Reveal、IDA、Hopper、https抓包 等》，发现文章有点杂，并且“iOS 如何做才安全”这部分写的越来越多，觉得 分出来更清晰一点。所以拆成两部分。 同时也是为了大家能 共同讨论，毕竟不是专业搞安全的，如果文中有错误 欢迎指正，共同进步。
-
-iOS应用的安全性 常常被大家忽视。
-iOS 如何做才安全?
-
-
-1、首先，我们可以通过iT
-          ...
+          <p>本来 写了一篇<a href="http://www.cnblogs.com/dahe007/p/5546990.html" target="_blank" rel="noopener">《iOS 如何做才安全–逆向工程 - Reveal、IDA、Hopper、https抓包 等》</a>，发现文章有点杂，并且“iOS 如何做才安全”这部分写的越来越多，觉得 分出来更清晰一点。所以拆成两部分。 同时也是为了大家能 共同讨论，毕竟不是专业搞安全的，如果文中有错误 欢迎指正，共同进步。</p><blockquote>
+<p>iOS应用的安全性 常常被大家忽视。</p>
+<p>iOS 如何做才安全?</p>
+</blockquote><hr><p>1、首先，我们可以通过iTunes 下载 AppStore的ipa文件(苹果 把开发者上传的ipa包 进行了加壳再放到AppStore中)，所以我们从AppStore下载的ipa都是加壳的，所以不能直接用来反编译。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/03/iOS/17070302.iOS APP如何做才安全/index/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+            <div class="post-button">
+              <a class="btn" href="/2017/07/03/iOS/17070302.iOS APP如何做才安全/index/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
           <!--/noindex-->
         
       
     </div>
 
     
-
     
     
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
-
-
-    
-      
-
-  
-
   
   
   
 
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://tbd.tech/2017/07/03/iOS/17070301.逆向工程 - Reveal、IDA、Hopper、HTTPS抓包等/index/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://tbd.ink/2017/07/03/iOS/17070301.逆向工程 - Reveal、IDA、Hopper、HTTPS抓包等/index/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/avatars/avatar.png">
       <meta itemprop="name" content="TBD">
       <meta itemprop="description" content="一个梦想着改变世界的小程序猿……">
-      <meta itemprop="image" content="/avatars/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="　 TBD's Blog 　">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/03/iOS/17070301.逆向工程 - Reveal、IDA、Hopper、HTTPS抓包等/index/" itemprop="url">
-                  逆向工程 - Reveal、IDA、Hopper、HTTPS抓包等
-                </a>
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/07/03/iOS/17070301.逆向工程 - Reveal、IDA、Hopper、HTTPS抓包等/index/" class="post-title-link" itemprop="url">逆向工程 - Reveal、IDA、Hopper、HTTPS抓包等</a>
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">发表于</span>
 
               <time title="创建时间：2017-07-03 02:37:37" itemprop="dateCreated datePublished" datetime="2017-07-03T02:37:37+00:00">2017-07-03</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
+            </span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-11-22 14:24:32" itemprop="dateModified" datetime="2019-11-22T14:24:32+00:00">2019-11-22</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-23 11:56:14" itemprop="dateModified" datetime="2019-11-23T11:56:14+00:00">2019-11-23</time>
+              </span>
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            <!--noindex-->
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
                 </span>
-                <a href="/2017/07/03/iOS/17070301.逆向工程 - Reveal、IDA、Hopper、HTTPS抓包等/index/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count hc-comment-count" data-xid="2017/07/03/iOS/17070301.逆向工程 - Reveal、IDA、Hopper、HTTPS抓包等/index/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-              <!--/noindex-->
-            
-          
-
-          
-          
-
-          
-
-          
+            </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -1252,192 +613,84 @@ iOS 如何做才安全?
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
-          
-          iOS应用的安全性 常常被大家忽视。
-iOS 如何做才安全详见《iOS如何做才安全》
-ipa文件
-AppStore里的ipa包 可以通过 iTunes 下载到电脑。iOS8.3以下系统的非越狱的手机上，可以用MAC上的PP助手等软件，直接把手机上的ipa文件(包含沙盒里的存储文件)拷贝到电脑。
-
-如果是越狱手机，都可以用PP助手、itools直接把ipa导出到电脑，并且可以用PP助手、iExplo
-          ...
+          <p>iOS应用的安全性 常常被大家忽视。</p><h3 id="iOS-如何做才安全"><a href="#iOS-如何做才安全" class="headerlink" title="iOS 如何做才安全"></a>iOS 如何做才安全</h3><p>详见<a href="http://www.cnblogs.com/dahe007/p/5565643.html" target="_blank" rel="noopener">《iOS如何做才安全》</a></p><h3 id="ipa文件"><a href="#ipa文件" class="headerlink" title="ipa文件"></a>ipa文件</h3><ul>
+<li>AppStore里的ipa包 可以通过 iTunes 下载到电脑。iOS8.3以下系统的非越狱的手机上，可以用MAC上的PP助手等软件，直接把手机上的ipa文件(包含沙盒里的存储文件)拷贝到电脑。</li>
+</ul><p>如果是越狱手机，都可以用PP助手、itools直接把ipa导出到电脑，并且可以用PP助手、iExplorer、itools这些工具 查看 iOS的系统目录。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/07/03/iOS/17070301.逆向工程 - Reveal、IDA、Hopper、HTTPS抓包等/index/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+            <div class="post-button">
+              <a class="btn" href="/2017/07/03/iOS/17070301.逆向工程 - Reveal、IDA、Hopper、HTTPS抓包等/index/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
           <!--/noindex-->
         
       
     </div>
 
     
-
     
     
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
-
-
-    
-      
-
-  
-
   
   
   
 
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://tbd.tech/2017/06/28/iOS/17062804.深入解构iOS的Block闭包实现原理/index/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://tbd.ink/2017/06/28/iOS/17062804.深入解构iOS的Block闭包实现原理/index/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/avatars/avatar.png">
       <meta itemprop="name" content="TBD">
       <meta itemprop="description" content="一个梦想着改变世界的小程序猿……">
-      <meta itemprop="image" content="/avatars/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="　 TBD's Blog 　">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/28/iOS/17062804.深入解构iOS的Block闭包实现原理/index/" itemprop="url">
-                  深入解构iOS的Block闭包实现原理
-                </a>
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/06/28/iOS/17062804.深入解构iOS的Block闭包实现原理/index/" class="post-title-link" itemprop="url">深入解构iOS的Block闭包实现原理</a>
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">发表于</span>
 
               <time title="创建时间：2017-06-28 04:25:41" itemprop="dateCreated datePublished" datetime="2017-06-28T04:25:41+00:00">2017-06-28</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
+            </span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-11-22 14:24:32" itemprop="dateModified" datetime="2019-11-22T14:24:32+00:00">2019-11-22</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-23 11:56:14" itemprop="dateModified" datetime="2019-11-23T11:56:14+00:00">2019-11-23</time>
+              </span>
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            <!--noindex-->
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
                 </span>
-                <a href="/2017/06/28/iOS/17062804.深入解构iOS的Block闭包实现原理/index/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count hc-comment-count" data-xid="2017/06/28/iOS/17062804.深入解构iOS的Block闭包实现原理/index/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-              <!--/noindex-->
-            
-          
-
-          
-          
-
-          
-
-          
+            </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -1445,187 +698,82 @@ AppStore里的ipa包 可以通过 iTunes 下载到电脑。iOS8.3以下系统的
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
-          
-          在iOS4出来后，苹果公司在OC中推出了block机制(也许更早就有了)。并且在后续的版本中大量的推广和使用了这项技术，比如对视图动画API的改版，比如GCD技术等等。block技术并不是什么新技术，他的本质就是闭包功能在iOS上的实现而已。而闭包功能在其他很多语言中都有实现，比如JAVA中接口的匿名实现。用闭包可以解决那些执行逻辑和上下文环境解耦的场景，如果从设计模式的角度来考虑的话闭包就是一种
-          ...
+          <p>在iOS4出来后，苹果公司在OC中推出了block机制(也许更早就有了)。并且在后续的版本中大量的推广和使用了这项技术，比如对视图动画API的改版，比如GCD技术等等。block技术并不是什么新技术，他的本质就是闭包功能在iOS上的实现而已。而闭包功能在其他很多语言中都有实现，比如JAVA中接口的匿名实现。用闭包可以解决那些执行逻辑和上下文环境解耦的场景，如果从设计模式的角度来考虑的话闭包就是一种策略模式(Strategy)的实现。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/06/28/iOS/17062804.深入解构iOS的Block闭包实现原理/index/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+            <div class="post-button">
+              <a class="btn" href="/2017/06/28/iOS/17062804.深入解构iOS的Block闭包实现原理/index/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
           <!--/noindex-->
         
       
     </div>
 
     
-
     
     
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
-
-
-    
-      
-
-  
-
   
   
   
 
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://tbd.tech/2017/06/28/iOS/17062803.深究Block的实现/index/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://tbd.ink/2017/06/28/iOS/17062803.深究Block的实现/index/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/avatars/avatar.png">
       <meta itemprop="name" content="TBD">
       <meta itemprop="description" content="一个梦想着改变世界的小程序猿……">
-      <meta itemprop="image" content="/avatars/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="　 TBD's Blog 　">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/28/iOS/17062803.深究Block的实现/index/" itemprop="url">
-                  深究Block的实现
-                </a>
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/06/28/iOS/17062803.深究Block的实现/index/" class="post-title-link" itemprop="url">深究Block的实现</a>
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">发表于</span>
 
               <time title="创建时间：2017-06-28 03:25:43" itemprop="dateCreated datePublished" datetime="2017-06-28T03:25:43+00:00">2017-06-28</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
+            </span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-11-22 14:24:32" itemprop="dateModified" datetime="2019-11-22T14:24:32+00:00">2019-11-22</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-23 11:56:14" itemprop="dateModified" datetime="2019-11-23T11:56:14+00:00">2019-11-23</time>
+              </span>
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            <!--noindex-->
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
                 </span>
-                <a href="/2017/06/28/iOS/17062803.深究Block的实现/index/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count hc-comment-count" data-xid="2017/06/28/iOS/17062803.深究Block的实现/index/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-              <!--/noindex-->
-            
-          
-
-          
-          
-
-          
-
-          
+            </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -1633,192 +781,82 @@ AppStore里的ipa包 可以通过 iTunes 下载到电脑。iOS8.3以下系统的
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
-          
-          先看一下Block使用的语法
-声明一个block
-12返回值 （^名称）（参数列表） ＝ ^(参数列表)｛｝；
-1234int (^name)(int ,int) = ^(int a,int b)&#123;          return （a+b）;&#125;;
-作为一个函数的参数：
-12345678- (void)testBlock:(NSString *(返回类型) (^)(int a)
-          ...
+          <p>先看一下Block使用的语法</p><p>声明一个block</p><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">返回值 （^名称）（参数列表） ＝ ^(参数列表)｛</span><br><span class="line">｝；</span><br></pre></td></tr></table></figure><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> (^name)(<span class="keyword">int</span> ,<span class="keyword">int</span>) = ^(<span class="keyword">int</span> a,<span class="keyword">int</span> b)&#123;</span><br><span class="line">     </span><br><span class="line">     <span class="keyword">return</span> （a+b）;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p>作为一个函数的参数：</p><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)testBlock:(<span class="built_in">NSString</span> *(返回类型) (^)(<span class="keyword">int</span> a))s（block名字） &#123;</span><br><span class="line">    <span class="built_in">NSString</span> *a = s(<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line">[<span class="keyword">self</span> testBlock:^<span class="built_in">NSString</span> *(<span class="keyword">int</span> a) &#123;</span><br><span class="line">     a = <span class="number">5</span>;</span><br><span class="line">     <span class="keyword">return</span> <span class="string">@"1"</span>;</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/06/28/iOS/17062803.深究Block的实现/index/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+            <div class="post-button">
+              <a class="btn" href="/2017/06/28/iOS/17062803.深究Block的实现/index/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
           <!--/noindex-->
         
       
     </div>
 
     
-
     
     
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
-
-
-    
-      
-
-  
-
   
   
   
 
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://tbd.tech/2017/06/28/iOS/17062802.Objective-C中的Block/index/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://tbd.ink/2017/06/28/iOS/17062802.Objective-C中的Block/index/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/avatars/avatar.png">
       <meta itemprop="name" content="TBD">
       <meta itemprop="description" content="一个梦想着改变世界的小程序猿……">
-      <meta itemprop="image" content="/avatars/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="　 TBD's Blog 　">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/28/iOS/17062802.Objective-C中的Block/index/" itemprop="url">
-                  Objective-C中的Block
-                </a>
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/06/28/iOS/17062802.Objective-C中的Block/index/" class="post-title-link" itemprop="url">Objective-C中的Block</a>
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">发表于</span>
 
               <time title="创建时间：2017-06-28 02:51:01" itemprop="dateCreated datePublished" datetime="2017-06-28T02:51:01+00:00">2017-06-28</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
+            </span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-11-22 14:24:32" itemprop="dateModified" datetime="2019-11-22T14:24:32+00:00">2019-11-22</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-23 11:56:14" itemprop="dateModified" datetime="2019-11-23T11:56:14+00:00">2019-11-23</time>
+              </span>
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            <!--noindex-->
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
                 </span>
-                <a href="/2017/06/28/iOS/17062802.Objective-C中的Block/index/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count hc-comment-count" data-xid="2017/06/28/iOS/17062802.Objective-C中的Block/index/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-              <!--/noindex-->
-            
-          
-
-          
-          
-
-          
-
-          
+            </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -1826,196 +864,86 @@ AppStore里的ipa包 可以通过 iTunes 下载到电脑。iOS8.3以下系统的
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
-          
-          相关概念在这篇笔记开始之前，我们需要对以下概念有所了解。
-操作系统中的栈和堆
-注：这里所说的堆和栈与数据结构中的堆和栈不是一回事。
-
-我们先来看看一个由C/C++/ObjC编译的程序占用内存分布的结构： 
-
-
-栈区（stack）：由系统自动分配，一般存放函数参数值、局部变量的值等。由编译器自动创建与释放。其操作方式类似于数据结构中的栈，即后进先出、先进后出的原则。
-
-例如：在函数中申明一个局部变量
-          ...
+          <h3 id="相关概念"><a href="#相关概念" class="headerlink" title="相关概念"></a>相关概念</h3><p>在这篇笔记开始之前，我们需要对以下概念有所了解。</p><h4 id="操作系统中的栈和堆"><a href="#操作系统中的栈和堆" class="headerlink" title="操作系统中的栈和堆"></a>操作系统中的栈和堆</h4><blockquote>
+<p>注：这里所说的堆和栈与数据结构中的堆和栈不是一回事。</p>
+</blockquote><p>我们先来看看一个由C/C++/ObjC编译的程序占用内存分布的结构： </p><p><img src="/2017/06/28/iOS/17062802.Objective-C中的Block/index/memory.png" alt="memory"></p><ul>
+<li><strong>栈区（stack）</strong>：由系统自动分配，一般存放函数参数值、局部变量的值等。由编译器自动创建与释放。其操作方式类似于数据结构中的栈，即后进先出、先进后出的原则。</li>
+</ul><p>例如：在函数中申明一个局部变量int b;系统自动在栈中为b开辟空间。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/06/28/iOS/17062802.Objective-C中的Block/index/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+            <div class="post-button">
+              <a class="btn" href="/2017/06/28/iOS/17062802.Objective-C中的Block/index/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
           <!--/noindex-->
         
       
     </div>
 
     
-
     
     
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
-
-
-    
-      
-
-  
-
   
   
   
 
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://tbd.tech/2017/06/28/iOS/17062801.iOS中block类型大全/index/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://tbd.ink/2017/06/28/iOS/17062801.iOS中block类型大全/index/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/avatars/avatar.png">
       <meta itemprop="name" content="TBD">
       <meta itemprop="description" content="一个梦想着改变世界的小程序猿……">
-      <meta itemprop="image" content="/avatars/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="　 TBD's Blog 　">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/28/iOS/17062801.iOS中block类型大全/index/" itemprop="url">
-                  iOS中block类型大全
-                </a>
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/06/28/iOS/17062801.iOS中block类型大全/index/" class="post-title-link" itemprop="url">iOS中block类型大全</a>
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">发表于</span>
 
               <time title="创建时间：2017-06-28 01:54:04" itemprop="dateCreated datePublished" datetime="2017-06-28T01:54:04+00:00">2017-06-28</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
+            </span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-11-22 14:24:32" itemprop="dateModified" datetime="2019-11-22T14:24:32+00:00">2019-11-22</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-23 11:56:14" itemprop="dateModified" datetime="2019-11-23T11:56:14+00:00">2019-11-23</time>
+              </span>
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            <!--noindex-->
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
                 </span>
-                <a href="/2017/06/28/iOS/17062801.iOS中block类型大全/index/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count hc-comment-count" data-xid="2017/06/28/iOS/17062801.iOS中block类型大全/index/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-              <!--/noindex-->
-            
-          
-
-          
-          
-
-          
-
-          
+            </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -2023,228 +951,95 @@ AppStore里的ipa包 可以通过 iTunes 下载到电脑。iOS8.3以下系统的
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
-          
-          
-typedef的block
-
-作为属性的block
-
-
-
-
-作为变量的block
-
-
-
-作为方法变量入参的block
-
-
-
-作为方法参数的block
-
-
-
-无名block
-
-
-
-内联函数的block
-
-
-
-递归调用的block
-
-
-
-作为方法返回值的block
-
-
-
-作为函数名的block(太过奇葩,完全不知道怎么用-_-!)
-
-
-
-原文
-
-          
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/06/28/iOS/17062801.iOS中block类型大全/index/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+          <ul>
+<li><p>typedef的block</p>
+</li>
+<li><p>作为属性的block</p>
+</li>
+</ul><p><img src="/2017/06/28/iOS/17062801.iOS中block类型大全/index/attribute.png" alt="attribute"></p><ul>
+<li>作为变量的block</li>
+</ul><p><img src="/2017/06/28/iOS/17062801.iOS中block类型大全/index/variable.png" alt="variable"></p><ul>
+<li>作为方法变量入参的block</li>
+</ul><p><img src="/2017/06/28/iOS/17062801.iOS中block类型大全/index/in_variable_parameter.png" alt="in_variable_parameter"></p><ul>
+<li>作为方法参数的block</li>
+</ul><p><img src="/2017/06/28/iOS/17062801.iOS中block类型大全/index/in_parameter.png" alt="in_parameter"></p><ul>
+<li>无名block</li>
+</ul><p><img src="/2017/06/28/iOS/17062801.iOS中block类型大全/index/no_name.png" alt="no_name"></p><ul>
+<li>内联函数的block</li>
+</ul><p><img src="/2017/06/28/iOS/17062801.iOS中block类型大全/index/in_func.png" alt="in_func"></p><ul>
+<li>递归调用的block</li>
+</ul><p><img src="/2017/06/28/iOS/17062801.iOS中block类型大全/index/recursive.png" alt="recursive"></p><ul>
+<li>作为方法返回值的block</li>
+</ul><p><img src="/2017/06/28/iOS/17062801.iOS中block类型大全/index/func_out.png" alt="func_out"></p><ul>
+<li>作为函数名的block(太过奇葩,完全不知道怎么用-_-!)</li>
+</ul><p><img src="/2017/06/28/iOS/17062801.iOS中block类型大全/index/func_name.png" alt="func_name"></p><hr><p><a href="https://yq.aliyun.com/articles/30712" target="_blank" rel="noopener">原文</a></p>
       
     </div>
 
     
-
     
     
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
-
-
-    
-      
-
-  
-
   
   
   
 
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://tbd.tech/2017/06/26/iOS/17062602.The Right Way to Architect iOS App with Swift/index/">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://tbd.ink/2017/06/26/iOS/17062602.The Right Way to Architect iOS App with Swift/index/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/avatars/avatar.png">
       <meta itemprop="name" content="TBD">
       <meta itemprop="description" content="一个梦想着改变世界的小程序猿……">
-      <meta itemprop="image" content="/avatars/avatar.png">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="　 TBD's Blog 　">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/26/iOS/17062602.The Right Way to Architect iOS App with Swift/index/" itemprop="url">
-                  The Right Way to Architect iOS App with Swift
-                </a>
-              
-            
-          </h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/06/26/iOS/17062602.The Right Way to Architect iOS App with Swift/index/" class="post-title-link" itemprop="url">The Right Way to Architect iOS App with Swift</a>
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
+              <span class="post-meta-item-text">发表于</span>
 
               <time title="创建时间：2017-06-26 03:49:22" itemprop="dateCreated datePublished" datetime="2017-06-26T03:49:22+00:00">2017-06-26</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
+            </span>
+              <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-11-22 14:24:32" itemprop="dateModified" datetime="2019-11-22T14:24:32+00:00">2019-11-22</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-23 11:56:14" itemprop="dateModified" datetime="2019-11-23T11:56:14+00:00">2019-11-23</time>
+              </span>
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/iOS/" itemprop="url" rel="index"><span itemprop="name">iOS</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            <!--noindex-->
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/iOS/" itemprop="url" rel="index">
+                    <span itemprop="name">iOS</span>
+                  </a>
                 </span>
-                <a href="/2017/06/26/iOS/17062602.The Right Way to Architect iOS App with Swift/index/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count hc-comment-count" data-xid="2017/06/26/iOS/17062602.The Right Way to Architect iOS App with Swift/index/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-              <!--/noindex-->
-            
-          
-
-          
-          
-
-          
-
-          
+            </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -2252,59 +1047,30 @@ typedef的block
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
-          
-          关于 iOS 架构的文章感觉已经泛滥了，前一阵正好 Android 官方推了一套 App Architecture ，于是就在想，对于 iOS 来说，怎样的架构才是最适合的。带着这个问题，我开始了探索。
-Why Architecture Matters?这是第一个也是最重要的问题，为什么会出现各种 Architecture Pattern？真的那么重要么？
-我们来想一下，无论是做一个 App 还是
-          ...
+          <p>关于 iOS 架构的文章感觉已经泛滥了，前一阵正好 Android 官方推了一套 <a href="https://developer.android.com/topic/libraries/architecture/guide.html" target="_blank" rel="noopener">App Architecture</a> ，于是就在想，对于 iOS 来说，怎样的架构才是最适合的。带着这个问题，我开始了探索。</p><h3 id="Why-Architecture-Matters"><a href="#Why-Architecture-Matters" class="headerlink" title="Why Architecture Matters?"></a>Why Architecture Matters?</h3><p>这是第一个也是最重要的问题，为什么会出现各种 Architecture Pattern？真的那么重要么？</p><p>我们来想一下，无论是做一个 App 还是搭一套后台系统，如果是一次性的，今天用完明天就可以扔掉，那么怎么快怎么来，代码重复、代码逻辑、代码格式统统不重要。</p>
           <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/06/26/iOS/17062602.The Right Way to Architect iOS App with Swift/index/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+            <div class="post-button">
+              <a class="btn" href="/2017/06/26/iOS/17062602.The Right Way to Architect iOS App with Swift/index/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
           <!--/noindex-->
         
       
     </div>
 
     
-
     
     
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
+  
+  
+  
 
-
-    
-  </section>
+  </div>
 
   
   <nav class="pagination">
@@ -2317,197 +1083,103 @@ Why Architecture Matters?这是第一个也是最重要的问题，为什么会�
           
 
         </div>
-        
           
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
 
-  <aside id="sidebar" class="sidebar">
-    
+  <aside class="sidebar">
     <div class="sidebar-inner">
 
-      
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
 
-      
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image"
-                src="/avatars/avatar.png"
-                alt="TBD" />
-            
-              <p class="site-author-name" itemprop="name">TBD</p>
-              <p class="site-description motion-element" itemprop="description">一个梦想着改变世界的小程序猿……</p>
-          </div>
-
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="site-author-image" itemprop="image" alt="TBD"
+    src="/avatars/avatar.png">
+  <p class="site-author-name" itemprop="name">TBD</p>
+  <div class="site-description" itemprop="description">一个梦想着改变世界的小程序猿……</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
           
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">25</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-              
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/tobedefined" title="GitHub &rarr; https://github.com/tobedefined" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+  </div>
 
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">3</span>
-                    <span class="site-state-item-name">分类</span>
-                  </a>
-                </div>
-              
 
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">22</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
 
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  <a href="https://github.com/tobedefined" target="_blank" title="GitHub"><i class="fa fa-fw fa-globe"></i>GitHub</a>
-                  
-                </span>
-              
-            </div>
-          
-
-          
-          
-
-          
-          
-
-          
-            
-          
-          
-
-        </div>
-      </section>
-
-      
-
-      
+      </div>
 
     </div>
   </aside>
+  <div id="sidebar-dimmer"></div>
 
 
-        
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love" id="animate">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">TBD</span>
-
-  
-
-  
 </div>
-
-
-
-
-  <div class="powered-by">Hosted by <a class="theme-link" target="_blank" href="https://pages.coding.net/">Coding Pages</a> And <a class="theme-link" target="_blank" href="https://pages.github.com/">GitHub Pages</a>, Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
-
-
-
+  <div class="powered-by">Hosted by <a class="theme-link" target="_blank" href="https://pages.coding.net/">Coding Pages</a> And <a class="theme-link" target="_blank" href="https://pages.github.com/">GitHub Pages</a>, Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.7.1
+  </div>
   <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Mist</a> v6.3.0</div>
-
-
-
+  <div class="theme-info">主题 – <a href="https://mist.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.5.0
+  </div>
 
         
+
+
+
+
 
 
 
@@ -2519,87 +1191,15 @@ Why Architecture Matters?这是第一个也是最重要的问题，为什么会�
         
       </div>
     </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-          <span id="scrollpercent"><span>0</span>%</span>
-        
-      </div>
-    
-
-    
-
   </div>
 
   
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
-
-
-
-  
-  
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/muse.js"></script>
+<script src="/js/next-boot.js"></script>
 
 
 
@@ -2607,28 +1207,8 @@ Why Architecture Matters?这是第一个也是最重要的问题，为什么会�
 
 
 
-	
 
-		<script type="text/javascript">
-		_hcwp = window._hcwp || [];
-
-		_hcwp.push({widget:"Bloggerstream", widget_id: 93352, selector:".hc-comment-count", label: "{\%COUNT%\}" });
-
-		
-
-		(function() {
-		if("HC_LOAD_INIT" in window)return;
-		HC_LOAD_INIT = true;
-		var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
-		var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
-		hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/93352/"+lang+"/widget.js";
-		var s = document.getElementsByTagName("script")[0];
-		s.parentNode.insertBefore(hcc, s.nextSibling);
-		})();
-		</script>
-
-	
-
+  <script src="/js/local-search.js"></script>
 
 
 
@@ -2644,350 +1224,8 @@ Why Architecture Matters?这是第一个也是最重要的问题，为什么会�
 
   
 
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
   
 
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
 </body>
 </html>
