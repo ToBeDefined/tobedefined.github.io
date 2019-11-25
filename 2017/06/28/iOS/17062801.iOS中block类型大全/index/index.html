@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.7.1">
+<meta name="generator" content="Hexo 4.0.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
@@ -56,26 +56,24 @@
 <meta name="keywords" content="iOS,Block">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS中block类型大全">
-<meta property="og:url" content="http://tbd.ink/2017/06/28/iOS/17062801.iOS中block类型大全/index/index.html">
+<meta property="og:url" content="http:&#x2F;&#x2F;tbd.ink&#x2F;2017&#x2F;06&#x2F;28&#x2F;iOS&#x2F;17062801.iOS%E4%B8%ADblock%E7%B1%BB%E5%9E%8B%E5%A4%A7%E5%85%A8&#x2F;index&#x2F;index.html">
 <meta property="og:site_name" content="　 TBD&#39;s Blog 　">
 <meta property="og:description" content="typedef的block  作为属性的block   作为变量的block  作为方法变量入参的block  作为方法参数的block  无名block  内联函数的block  递归调用的block  作为方法返回值的block  作为函数名的block(太过奇葩,完全不知道怎么用-_-!) 原文">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://tbd.ink/2017/06/28/iOS/17062801.iOS中block类型大全/index/attribute.png">
-<meta property="og:image" content="http://tbd.ink/2017/06/28/iOS/17062801.iOS中block类型大全/index/variable.png">
-<meta property="og:image" content="http://tbd.ink/2017/06/28/iOS/17062801.iOS中block类型大全/index/in_variable_parameter.png">
-<meta property="og:image" content="http://tbd.ink/2017/06/28/iOS/17062801.iOS中block类型大全/index/in_parameter.png">
-<meta property="og:image" content="http://tbd.ink/2017/06/28/iOS/17062801.iOS中block类型大全/index/no_name.png">
-<meta property="og:image" content="http://tbd.ink/2017/06/28/iOS/17062801.iOS中block类型大全/index/in_func.png">
-<meta property="og:image" content="http://tbd.ink/2017/06/28/iOS/17062801.iOS中block类型大全/index/recursive.png">
-<meta property="og:image" content="http://tbd.ink/2017/06/28/iOS/17062801.iOS中block类型大全/index/func_out.png">
-<meta property="og:image" content="http://tbd.ink/2017/06/28/iOS/17062801.iOS中block类型大全/index/func_name.png">
-<meta property="og:updated_time" content="2019-11-24T09:07:29.000Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;tbd.ink&#x2F;2017&#x2F;06&#x2F;28&#x2F;iOS&#x2F;17062801.iOS%E4%B8%ADblock%E7%B1%BB%E5%9E%8B%E5%A4%A7%E5%85%A8&#x2F;index&#x2F;attribute.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;tbd.ink&#x2F;2017&#x2F;06&#x2F;28&#x2F;iOS&#x2F;17062801.iOS%E4%B8%ADblock%E7%B1%BB%E5%9E%8B%E5%A4%A7%E5%85%A8&#x2F;index&#x2F;variable.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;tbd.ink&#x2F;2017&#x2F;06&#x2F;28&#x2F;iOS&#x2F;17062801.iOS%E4%B8%ADblock%E7%B1%BB%E5%9E%8B%E5%A4%A7%E5%85%A8&#x2F;index&#x2F;in_variable_parameter.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;tbd.ink&#x2F;2017&#x2F;06&#x2F;28&#x2F;iOS&#x2F;17062801.iOS%E4%B8%ADblock%E7%B1%BB%E5%9E%8B%E5%A4%A7%E5%85%A8&#x2F;index&#x2F;in_parameter.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;tbd.ink&#x2F;2017&#x2F;06&#x2F;28&#x2F;iOS&#x2F;17062801.iOS%E4%B8%ADblock%E7%B1%BB%E5%9E%8B%E5%A4%A7%E5%85%A8&#x2F;index&#x2F;no_name.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;tbd.ink&#x2F;2017&#x2F;06&#x2F;28&#x2F;iOS&#x2F;17062801.iOS%E4%B8%ADblock%E7%B1%BB%E5%9E%8B%E5%A4%A7%E5%85%A8&#x2F;index&#x2F;in_func.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;tbd.ink&#x2F;2017&#x2F;06&#x2F;28&#x2F;iOS&#x2F;17062801.iOS%E4%B8%ADblock%E7%B1%BB%E5%9E%8B%E5%A4%A7%E5%85%A8&#x2F;index&#x2F;recursive.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;tbd.ink&#x2F;2017&#x2F;06&#x2F;28&#x2F;iOS&#x2F;17062801.iOS%E4%B8%ADblock%E7%B1%BB%E5%9E%8B%E5%A4%A7%E5%85%A8&#x2F;index&#x2F;func_out.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;tbd.ink&#x2F;2017&#x2F;06&#x2F;28&#x2F;iOS&#x2F;17062801.iOS%E4%B8%ADblock%E7%B1%BB%E5%9E%8B%E5%A4%A7%E5%85%A8&#x2F;index&#x2F;func_name.png">
+<meta property="og:updated_time" content="2019-11-25T05:30:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iOS中block类型大全">
-<meta name="twitter:description" content="typedef的block  作为属性的block   作为变量的block  作为方法变量入参的block  作为方法参数的block  无名block  内联函数的block  递归调用的block  作为方法返回值的block  作为函数名的block(太过奇葩,完全不知道怎么用-_-!) 原文">
-<meta name="twitter:image" content="http://tbd.ink/2017/06/28/iOS/17062801.iOS中block类型大全/index/attribute.png">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;tbd.ink&#x2F;2017&#x2F;06&#x2F;28&#x2F;iOS&#x2F;17062801.iOS%E4%B8%ADblock%E7%B1%BB%E5%9E%8B%E5%A4%A7%E5%85%A8&#x2F;index&#x2F;attribute.png">
 
-<link rel="canonical" href="http://tbd.ink/2017/06/28/iOS/17062801.iOS中block类型大全/index/">
+<link rel="canonical" href="http://tbd.ink/2017/06/28/iOS/17062801.iOS%E4%B8%ADblock%E7%B1%BB%E5%9E%8B%E5%A4%A7%E5%85%A8/index/">
 
 
 <script id="page-configurations">
@@ -234,7 +232,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://tbd.ink/2017/06/28/iOS/17062801.iOS中block类型大全/index/">
+    <link itemprop="mainEntityOfPage" href="http://tbd.ink/2017/06/28/iOS/17062801.iOS%E4%B8%ADblock%E7%B1%BB%E5%9E%8B%E5%A4%A7%E5%85%A8/index/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/avatars/avatar.png">
@@ -264,7 +262,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-24 09:07:29" itemprop="dateModified" datetime="2019-11-24T09:07:29+00:00">2019-11-24</time>
+                <time title="修改时间：2019-11-25 05:30:48" itemprop="dateModified" datetime="2019-11-25T05:30:48+00:00">2019-11-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -294,23 +292,23 @@
 </li>
 <li><p>作为属性的block</p>
 </li>
-</ul><p><img src="/2017/06/28/iOS/17062801.iOS中block类型大全/index/attribute.png" alt="attribute"></p><ul>
+</ul><p><img src="/2017/06/28/iOS/17062801.iOS%E4%B8%ADblock%E7%B1%BB%E5%9E%8B%E5%A4%A7%E5%85%A8/index/attribute.png" alt="attribute"></p><ul>
 <li>作为变量的block</li>
-</ul><p><img src="/2017/06/28/iOS/17062801.iOS中block类型大全/index/variable.png" alt="variable"></p><ul>
+</ul><p><img src="/2017/06/28/iOS/17062801.iOS%E4%B8%ADblock%E7%B1%BB%E5%9E%8B%E5%A4%A7%E5%85%A8/index/variable.png" alt="variable"></p><ul>
 <li>作为方法变量入参的block</li>
-</ul><p><img src="/2017/06/28/iOS/17062801.iOS中block类型大全/index/in_variable_parameter.png" alt="in_variable_parameter"></p><ul>
+</ul><p><img src="/2017/06/28/iOS/17062801.iOS%E4%B8%ADblock%E7%B1%BB%E5%9E%8B%E5%A4%A7%E5%85%A8/index/in_variable_parameter.png" alt="in_variable_parameter"></p><ul>
 <li>作为方法参数的block</li>
-</ul><p><img src="/2017/06/28/iOS/17062801.iOS中block类型大全/index/in_parameter.png" alt="in_parameter"></p><ul>
+</ul><p><img src="/2017/06/28/iOS/17062801.iOS%E4%B8%ADblock%E7%B1%BB%E5%9E%8B%E5%A4%A7%E5%85%A8/index/in_parameter.png" alt="in_parameter"></p><ul>
 <li>无名block</li>
-</ul><p><img src="/2017/06/28/iOS/17062801.iOS中block类型大全/index/no_name.png" alt="no_name"></p><ul>
+</ul><p><img src="/2017/06/28/iOS/17062801.iOS%E4%B8%ADblock%E7%B1%BB%E5%9E%8B%E5%A4%A7%E5%85%A8/index/no_name.png" alt="no_name"></p><ul>
 <li>内联函数的block</li>
-</ul><p><img src="/2017/06/28/iOS/17062801.iOS中block类型大全/index/in_func.png" alt="in_func"></p><ul>
+</ul><p><img src="/2017/06/28/iOS/17062801.iOS%E4%B8%ADblock%E7%B1%BB%E5%9E%8B%E5%A4%A7%E5%85%A8/index/in_func.png" alt="in_func"></p><ul>
 <li>递归调用的block</li>
-</ul><p><img src="/2017/06/28/iOS/17062801.iOS中block类型大全/index/recursive.png" alt="recursive"></p><ul>
+</ul><p><img src="/2017/06/28/iOS/17062801.iOS%E4%B8%ADblock%E7%B1%BB%E5%9E%8B%E5%A4%A7%E5%85%A8/index/recursive.png" alt="recursive"></p><ul>
 <li>作为方法返回值的block</li>
-</ul><p><img src="/2017/06/28/iOS/17062801.iOS中block类型大全/index/func_out.png" alt="func_out"></p><ul>
+</ul><p><img src="/2017/06/28/iOS/17062801.iOS%E4%B8%ADblock%E7%B1%BB%E5%9E%8B%E5%A4%A7%E5%85%A8/index/func_out.png" alt="func_out"></p><ul>
 <li>作为函数名的block(太过奇葩,完全不知道怎么用-_-!)</li>
-</ul><p><img src="/2017/06/28/iOS/17062801.iOS中block类型大全/index/func_name.png" alt="func_name"></p><hr><p><a href="https://yq.aliyun.com/articles/30712" target="_blank" rel="noopener">原文</a></p>
+</ul><p><img src="/2017/06/28/iOS/17062801.iOS%E4%B8%ADblock%E7%B1%BB%E5%9E%8B%E5%A4%A7%E5%85%A8/index/func_name.png" alt="func_name"></p><hr><p><a href="https://yq.aliyun.com/articles/30712" target="_blank" rel="noopener">原文</a></p>
     </div>
 
     
@@ -327,7 +325,7 @@
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/2017/06/26/iOS/17062602.The Right Way to Architect iOS App with Swift/index/" rel="next" title="The Right Way to Architect iOS App with Swift">
+                <a href="/2017/06/26/iOS/17062602.The%20Right%20Way%20to%20Architect%20iOS%20App%20with%20Swift/index/" rel="next" title="The Right Way to Architect iOS App with Swift">
                   <i class="fa fa-chevron-left"></i> The Right Way to Architect iOS App with Swift
                 </a>
             </div>
@@ -335,7 +333,7 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/2017/06/28/iOS/17062802.Objective-C中的Block/index/" rel="prev" title="Objective-C中的Block">
+                <a href="/2017/06/28/iOS/17062802.Objective-C%E4%B8%AD%E7%9A%84Block/index/" rel="prev" title="Objective-C中的Block">
                   Objective-C中的Block <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
@@ -412,7 +410,7 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/tobedefined" title="GitHub &rarr; https://github.com/tobedefined" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/tobedefined" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;tobedefined" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
   </div>
 
@@ -441,10 +439,10 @@
   </span>
   <span class="author" itemprop="copyrightHolder">TBD</span>
 </div>
-  <div class="powered-by">Hosted by <a class="theme-link" target="_blank" href="https://pages.coding.net/">Coding Pages</a> And <a class="theme-link" target="_blank" href="https://pages.github.com/">GitHub Pages</a>, Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.7.1
+  <div class="powered-by">Hosted by <a class="theme-link" target="_blank" href="https://pages.coding.net/">Coding Pages</a> And <a class="theme-link" target="_blank" href="https://pages.github.com/">GitHub Pages</a>, Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://mist.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.5.0
+  <div class="theme-info">主题 – <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.5.0
   </div>
 
         
@@ -508,7 +506,7 @@
       repo: 'tobedefined.github.io',
       owner: 'tobedefined',
       admin: ['tobedefined'],
-      id: '6d970182deeeba8bbea2b805d1ca5dba',
+      id: '3a3f102b269334d3286f663ac0f1a73f',
         language: '',
       distractionFreeMode: 'true'
     });

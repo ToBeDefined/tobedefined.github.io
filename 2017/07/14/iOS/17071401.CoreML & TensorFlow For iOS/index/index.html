@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.7.1">
+<meta name="generator" content="Hexo 4.0.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
@@ -52,20 +52,18 @@
   };
 </script>
 
-  <meta name="description" content="暂未完成的文章，文中介绍了CoreML，TensorFlow和Keras的安装，以及TensorFlow在iOS上的使用，包含一个小的demo，LibTensorFlowForiOSSwift，地址在github：https://github.com/tobedefined/LibTensorFlowForiOSSwift 。">
+  <meta name="description" content="暂未完成的文章，文中介绍了CoreML，TensorFlow和Keras的安装，以及TensorFlow在iOS上的使用，包含一个小的demo，LibTensorFlowForiOSSwift，地址在github：https:&#x2F;&#x2F;github.com&#x2F;tobedefined&#x2F;LibTensorFlowForiOSSwift 。">
 <meta name="keywords" content="iOS,CoreML,TensorFlow,Keras,GitHub">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CoreML &amp; TensorFlow For iOS">
-<meta property="og:url" content="http://tbd.ink/2017/07/14/iOS/17071401.CoreML & TensorFlow For iOS/index/index.html">
+<meta property="og:url" content="http:&#x2F;&#x2F;tbd.ink&#x2F;2017&#x2F;07&#x2F;14&#x2F;iOS&#x2F;17071401.CoreML%20&amp;%20TensorFlow%20For%20iOS&#x2F;index&#x2F;index.html">
 <meta property="og:site_name" content="　 TBD&#39;s Blog 　">
-<meta property="og:description" content="暂未完成的文章，文中介绍了CoreML，TensorFlow和Keras的安装，以及TensorFlow在iOS上的使用，包含一个小的demo，LibTensorFlowForiOSSwift，地址在github：https://github.com/tobedefined/LibTensorFlowForiOSSwift 。">
+<meta property="og:description" content="暂未完成的文章，文中介绍了CoreML，TensorFlow和Keras的安装，以及TensorFlow在iOS上的使用，包含一个小的demo，LibTensorFlowForiOSSwift，地址在github：https:&#x2F;&#x2F;github.com&#x2F;tobedefined&#x2F;LibTensorFlowForiOSSwift 。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-24T09:07:29.000Z">
+<meta property="og:updated_time" content="2019-11-25T05:30:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CoreML &amp; TensorFlow For iOS">
-<meta name="twitter:description" content="暂未完成的文章，文中介绍了CoreML，TensorFlow和Keras的安装，以及TensorFlow在iOS上的使用，包含一个小的demo，LibTensorFlowForiOSSwift，地址在github：https://github.com/tobedefined/LibTensorFlowForiOSSwift 。">
 
-<link rel="canonical" href="http://tbd.ink/2017/07/14/iOS/17071401.CoreML & TensorFlow For iOS/index/">
+<link rel="canonical" href="http://tbd.ink/2017/07/14/iOS/17071401.CoreML%20&%20TensorFlow%20For%20iOS/index/">
 
 
 <script id="page-configurations">
@@ -224,7 +222,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://tbd.ink/2017/07/14/iOS/17071401.CoreML & TensorFlow For iOS/index/">
+    <link itemprop="mainEntityOfPage" href="http://tbd.ink/2017/07/14/iOS/17071401.CoreML%20&%20TensorFlow%20For%20iOS/index/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/avatars/avatar.png">
@@ -254,7 +252,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-24 09:07:29" itemprop="dateModified" datetime="2019-11-24T09:07:29+00:00">2019-11-24</time>
+                <time title="修改时间：2019-11-25 05:30:48" itemprop="dateModified" datetime="2019-11-25T05:30:48+00:00">2019-11-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -294,41 +292,56 @@
 
 
 
+
+
 <ul>
 <li>检查pip版本</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip -V  <span class="comment"># for Python 2.7</span></span><br><span class="line">pip3 -V <span class="comment"># for Python 3.n</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>升级pip版本和six版本（建议pip版本&gt;=8.1）</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo easy_install --upgrade pip</span><br><span class="line">sudo easy_install --upgrade six</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>pip安装TensorFlow</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip3 install tensorflow</span><br><span class="line">pip install tensorflow</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">$ pip3 install tensorflow</span><br><span class="line">Collecting tensorflow</span><br><span class="line">  Downloading tensorflow-1.2.1-cp35-cp35m-macosx_10_11_x86_64.whl (33.6MB)</span><br><span class="line">    100% |████████████████████████████████| 33.6MB 26kB/s</span><br><span class="line">Collecting werkzeug&gt;=0.11.10 (from tensorflow)</span><br><span class="line">  Using cached Werkzeug-0.12.2-py2.py3-none-any.whl</span><br><span class="line">Collecting wheel&gt;=0.26 (from tensorflow)</span><br><span class="line">  Downloading wheel-0.29.0-py2.py3-none-any.whl (66kB)</span><br><span class="line">    100% |████████████████████████████████| 71kB 65kB/s</span><br><span class="line">Collecting html5lib==0.9999999 (from tensorflow)</span><br><span class="line">  Using cached html5lib-0.9999999.tar.gz</span><br><span class="line">Requirement already satisfied: numpy&gt;=1.11.0 <span class="keyword">in</span> /Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages (from tensorflow)</span><br><span class="line">Collecting protobuf&gt;=3.2.0 (from tensorflow)</span><br><span class="line">Collecting backports.weakref==1.0rc1 (from tensorflow)</span><br><span class="line">  Using cached backports.weakref-1.0rc1-py3-none-any.whl</span><br><span class="line">Requirement already satisfied: six&gt;=1.10.0 <span class="keyword">in</span> /Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages (from tensorflow)</span><br><span class="line">Collecting bleach==1.5.0 (from tensorflow)</span><br><span class="line">  Using cached bleach-1.5.0-py2.py3-none-any.whl</span><br><span class="line">Collecting markdown&gt;=2.6.8 (from tensorflow)</span><br><span class="line">  Using cached Markdown-2.6.8.tar.gz</span><br><span class="line">Requirement already satisfied: setuptools <span class="keyword">in</span> /Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages (from protobuf&gt;=3.2.0-&gt;tensorflow)</span><br><span class="line">Installing collected packages: werkzeug, wheel, html5lib, protobuf, backports.weakref, bleach, markdown, tensorflow</span><br><span class="line">  Running setup.py install <span class="keyword">for</span> html5lib ... <span class="keyword">done</span></span><br><span class="line">  Running setup.py install <span class="keyword">for</span> markdown ... <span class="keyword">done</span></span><br><span class="line">Successfully installed backports.weakref-1.0rc1 bleach-1.5.0 html5lib-0.9999999 markdown-2.6.8 protobuf-3.3.0 tensorflow-1.2.1 werkzeug-0.12.2 wheel-0.29.0</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>(可选)如果pip安装TensorFlow失败尝试以下命令</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo pip  install --upgrade tfBinaryURL   <span class="comment"># Python 2.7</span></span><br><span class="line">sudo pip3 install --upgrade tfBinaryURL   <span class="comment"># Python 3.n</span></span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p><em>tfBinaryURL</em>是指TensorFlow Python package的URL，<a href="https://www.tensorflow.org/install/install_mac#the_url_of_the_tensorflow_python_package" target="_blank" rel="noopener">查找合适的下载地址</a><br>例如：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; sudo pip3 install --upgrade \</span><br><span class="line">&gt; https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-1.2.1-py2-none-any.whl </span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo pip3 install --upgrade \</span><br><span class="line">https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-1.2.1-py2-none-any.whl </span><br></pre></td></tr></table></figure>
 </blockquote>
 <ul>
 <li>验证安装正确</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ Python <span class="keyword">or</span> Python3</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>hello = tf.constant(<span class="string">'Hello, TensorFlow!'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>sess = tf.Session()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(sess.run(hello))</span><br></pre></td></tr></table></figure>
+
+
+
+
 <h3 id="Keras"><a href="#Keras" class="headerlink" title="Keras"></a>Keras</h3><p><a href="https://github.com/fchollet/keras" target="_blank" rel="noopener">github</a></p>
 <ul>
 <li>To install Keras, cd to the Keras folder and run the install command:</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo python setup.py install</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>You can also install Keras from PyPI:</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pip install keras</span><br></pre></td></tr></table></figure>
+
+
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">$ sudo pip3 install keras</span><br><span class="line">Password:</span><br><span class="line">The directory <span class="string">'/Users/shaoweinan154/Library/Caches/pip/http'</span> or its parent directory is not owned by the current user and the cache has been disabled. Please check the permissions and owner of that directory. If executing pip with sudo, you may want sudo<span class="string">'s -H flag.</span></span><br><span class="line"><span class="string">The directory '</span>/Users/shaoweinan154/Library/Caches/pip<span class="string">' or its parent directory is not owned by the current user and caching wheels has been disabled. check the permissions and owner of that directory. If executing pip with sudo, you may want sudo'</span>s -H flag.</span><br><span class="line">Collecting keras</span><br><span class="line">  Downloading Keras-2.0.6.tar.gz (228kB)</span><br><span class="line">    100% |████████████████████████████████| 235kB 170kB/s</span><br><span class="line">Collecting theano (from keras)</span><br><span class="line">  Downloading Theano-0.9.0.tar.gz (3.1MB)</span><br><span class="line">    100% |████████████████████████████████| 3.1MB 86kB/s</span><br><span class="line">Collecting pyyaml (from keras)</span><br><span class="line">  Downloading PyYAML-3.12.tar.gz (253kB)</span><br><span class="line">    100% |████████████████████████████████| 256kB 70kB/s</span><br><span class="line">Collecting six (from keras)</span><br><span class="line">  Downloading six-1.10.0-py2.py3-none-any.whl</span><br><span class="line">Collecting numpy&gt;=1.9.1 (from theano-&gt;keras)</span><br><span class="line">  Downloading numpy-1.13.1-cp35-cp35m-macosx_10_6_intel.macosx_10_9_intel.macosx_10_9_x86_64.macosx_10_10_intel.macosx_10_10_x86_64.whl (4.5MB)</span><br><span class="line">    100% |████████████████████████████████| 4.5MB 59kB/s</span><br><span class="line">Collecting scipy&gt;=0.14 (from theano-&gt;keras)</span><br><span class="line">  Downloading scipy-0.19.1-cp35-cp35m-macosx_10_6_intel.macosx_10_9_intel.macosx_10_9_x86_64.macosx_10_10_intel.macosx_10_10_x86_64.whl (16.1MB)</span><br><span class="line">    100% |████████████████████████████████| 16.1MB 30kB/s</span><br><span class="line">Installing collected packages: numpy, scipy, six, theano, pyyaml, keras</span><br><span class="line">  Running setup.py install <span class="keyword">for</span> theano ... <span class="keyword">done</span></span><br><span class="line">  Running setup.py install <span class="keyword">for</span> pyyaml ... <span class="keyword">done</span></span><br><span class="line">  Running setup.py install <span class="keyword">for</span> keras ... <span class="keyword">done</span></span><br><span class="line">Successfully installed keras-2.0.6 numpy-1.13.1 pyyaml-3.12 scipy-0.19.1 six-1.10.0 theano-0.9.0</span><br></pre></td></tr></table></figure>
+
 <h3 id="编译TensorFlow-For-iOS"><a href="#编译TensorFlow-For-iOS" class="headerlink" title="编译TensorFlow For iOS"></a>编译TensorFlow For iOS</h3><blockquote>
 <p><a href="https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/makefile" target="_blank" rel="noopener">官方文档</a></p>
 </blockquote>
@@ -347,16 +360,17 @@
 <p>源码:</p>
 </blockquote>
   <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">...</span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"tensorflow/core/kernels/cwise_ops_common.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> tensorflow &#123;</span><br><span class="line">REGISTER5(BinaryOp, CPU, <span class="string">"Add"</span>, functor::add, <span class="keyword">float</span>, Eigen::half, <span class="keyword">double</span>, int32,</span><br><span class="line">          int64);</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">if</span> TENSORFLOW_USE_SYCL</span></span><br><span class="line">...</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>修改为:</p>
 </blockquote>
-  <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">...</span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"tensorflow/core/kernels/cwise_ops_common.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> tensorflow &#123;</span><br><span class="line">REGISTER5(BinaryOp, CPU, <span class="string">"Add"</span>, functor::add, <span class="keyword">float</span>, Eigen::half, <span class="keyword">double</span>, int32,</span><br><span class="line">          int64);</span><br><span class="line"></span><br><span class="line"><span class="comment">// line 21 insert this code</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">if</span> defined(__ANDROID_TYPES_SLIM__)</span></span><br><span class="line">REGISTER(BinaryOp, CPU, <span class="string">"Add"</span>, functor::add, int32);</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span>  <span class="comment">// __ANDROID_TYPES_SLIM__</span></span></span><br><span class="line"><span class="comment">// insert end</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">if</span> TENSORFLOW_USE_SYCL</span></span><br><span class="line">...</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-</li>
+  <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">...</span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"tensorflow/core/kernels/cwise_ops_common.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> tensorflow &#123;</span><br><span class="line">REGISTER5(BinaryOp, CPU, <span class="string">"Add"</span>, functor::add, <span class="keyword">float</span>, Eigen::half, <span class="keyword">double</span>, int32,</span><br><span class="line">          int64);</span><br><span class="line"></span><br><span class="line"><span class="comment">// line 21 insert this code</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">if</span> defined(__ANDROID_TYPES_SLIM__)</span></span><br><span class="line">REGISTER(BinaryOp, CPU, <span class="string">"Add"</span>, functor::add, int32);</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span>  <span class="comment">// __ANDROID_TYPES_SLIM__</span></span></span><br><span class="line"><span class="comment">// insert end</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">if</span> TENSORFLOW_USE_SYCL</span></span><br><span class="line">...</span><br><span class="line">...</span><br></pre></td></tr></table></figure></li>
 <li><p><code>cwise_op_less.cc</code></p>
 <blockquote>
 <p>源码:</p>
 </blockquote>
   <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">...</span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"tensorflow/core/kernels/cwise_ops_common.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> tensorflow &#123;</span><br><span class="line">REGISTER8(BinaryOp, CPU, <span class="string">"Less"</span>, functor::less, <span class="keyword">float</span>, Eigen::half, <span class="keyword">double</span>,</span><br><span class="line">          int32, int64, uint8, int8, int16);</span><br><span class="line"><span class="meta">#<span class="meta-keyword">if</span> GOOGLE_CUDA</span></span><br><span class="line">REGISTER7(BinaryOp, GPU, <span class="string">"Less"</span>, functor::less, <span class="keyword">float</span>, Eigen::half, <span class="keyword">double</span>,</span><br><span class="line">          int64, uint8, int8, int16);</span><br><span class="line">...</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>修改为:</p>
 </blockquote>
@@ -372,6 +386,8 @@
 </li>
 <li><p>Building all at once</p>
   <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tensorflow/contrib/makefile/build_all_ios.sh</span><br></pre></td></tr></table></figure>
+
+
 </li>
 </ul>
 <h3 id="项目导入TensorFlow"><a href="#项目导入TensorFlow" class="headerlink" title="项目导入TensorFlow"></a>项目导入TensorFlow</h3><ul>
@@ -461,7 +477,7 @@
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/2017/07/05/iOS/17070502.在SDWebImage基础上添加UIImageView扩展使其可以缓存/index/" rel="next" title="在SDWebImage基础上添加UIImageView扩展使其可以缓存">
+                <a href="/2017/07/05/iOS/17070502.%E5%9C%A8SDWebImage%E5%9F%BA%E7%A1%80%E4%B8%8A%E6%B7%BB%E5%8A%A0UIImageView%E6%89%A9%E5%B1%95%E4%BD%BF%E5%85%B6%E5%8F%AF%E4%BB%A5%E7%BC%93%E5%AD%98/index/" rel="next" title="在SDWebImage基础上添加UIImageView扩展使其可以缓存">
                   <i class="fa fa-chevron-left"></i> 在SDWebImage基础上添加UIImageView扩展使其可以缓存
                 </a>
             </div>
@@ -547,7 +563,7 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/tobedefined" title="GitHub &rarr; https://github.com/tobedefined" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/tobedefined" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;tobedefined" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
   </div>
 
@@ -576,10 +592,10 @@
   </span>
   <span class="author" itemprop="copyrightHolder">TBD</span>
 </div>
-  <div class="powered-by">Hosted by <a class="theme-link" target="_blank" href="https://pages.coding.net/">Coding Pages</a> And <a class="theme-link" target="_blank" href="https://pages.github.com/">GitHub Pages</a>, Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.7.1
+  <div class="powered-by">Hosted by <a class="theme-link" target="_blank" href="https://pages.coding.net/">Coding Pages</a> And <a class="theme-link" target="_blank" href="https://pages.github.com/">GitHub Pages</a>, Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://mist.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.5.0
+  <div class="theme-info">主题 – <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.5.0
   </div>
 
         
@@ -643,7 +659,7 @@
       repo: 'tobedefined.github.io',
       owner: 'tobedefined',
       admin: ['tobedefined'],
-      id: '8dbd3151ac598284638fe7eb706d5b32',
+      id: '1cb4d67a36da9f5b1e590f7883a62609',
         language: '',
       distractionFreeMode: 'true'
     });

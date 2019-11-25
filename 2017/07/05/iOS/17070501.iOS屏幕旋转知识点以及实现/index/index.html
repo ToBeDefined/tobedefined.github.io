@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.7.1">
+<meta name="generator" content="Hexo 4.0.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
@@ -56,18 +56,16 @@
 <meta name="keywords" content="iOS,Orientation,屏幕旋转">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS屏幕旋转知识点以及实现">
-<meta property="og:url" content="http://tbd.ink/2017/07/05/iOS/17070501.iOS屏幕旋转知识点以及实现/index/index.html">
+<meta property="og:url" content="http:&#x2F;&#x2F;tbd.ink&#x2F;2017&#x2F;07&#x2F;05&#x2F;iOS&#x2F;17070501.iOS%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%AC%E7%9F%A5%E8%AF%86%E7%82%B9%E4%BB%A5%E5%8F%8A%E5%AE%9E%E7%8E%B0&#x2F;index&#x2F;index.html">
 <meta property="og:site_name" content="　 TBD&#39;s Blog 　">
 <meta property="og:description" content="此文主要针对IOS应用, 是屏幕旋转相关问题的一个总结。 主要内容有：iOS4,5,6-9,10+不同版的适配；强制旋转和自动旋转；个别屏幕可以旋转，其他屏幕不能旋转；以及最终的实现方式。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://tbd.ink/2017/07/05/iOS/17070501.iOS屏幕旋转知识点以及实现/index/setting.png">
-<meta property="og:updated_time" content="2019-11-24T09:07:29.000Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;tbd.ink&#x2F;2017&#x2F;07&#x2F;05&#x2F;iOS&#x2F;17070501.iOS%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%AC%E7%9F%A5%E8%AF%86%E7%82%B9%E4%BB%A5%E5%8F%8A%E5%AE%9E%E7%8E%B0&#x2F;index&#x2F;setting.png">
+<meta property="og:updated_time" content="2019-11-25T05:30:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iOS屏幕旋转知识点以及实现">
-<meta name="twitter:description" content="此文主要针对IOS应用, 是屏幕旋转相关问题的一个总结。 主要内容有：iOS4,5,6-9,10+不同版的适配；强制旋转和自动旋转；个别屏幕可以旋转，其他屏幕不能旋转；以及最终的实现方式。">
-<meta name="twitter:image" content="http://tbd.ink/2017/07/05/iOS/17070501.iOS屏幕旋转知识点以及实现/index/setting.png">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;tbd.ink&#x2F;2017&#x2F;07&#x2F;05&#x2F;iOS&#x2F;17070501.iOS%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%AC%E7%9F%A5%E8%AF%86%E7%82%B9%E4%BB%A5%E5%8F%8A%E5%AE%9E%E7%8E%B0&#x2F;index&#x2F;setting.png">
 
-<link rel="canonical" href="http://tbd.ink/2017/07/05/iOS/17070501.iOS屏幕旋转知识点以及实现/index/">
+<link rel="canonical" href="http://tbd.ink/2017/07/05/iOS/17070501.iOS%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%AC%E7%9F%A5%E8%AF%86%E7%82%B9%E4%BB%A5%E5%8F%8A%E5%AE%9E%E7%8E%B0/index/">
 
 
 <script id="page-configurations">
@@ -226,7 +224,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://tbd.ink/2017/07/05/iOS/17070501.iOS屏幕旋转知识点以及实现/index/">
+    <link itemprop="mainEntityOfPage" href="http://tbd.ink/2017/07/05/iOS/17070501.iOS%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%AC%E7%9F%A5%E8%AF%86%E7%82%B9%E4%BB%A5%E5%8F%8A%E5%AE%9E%E7%8E%B0/index/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/avatars/avatar.png">
@@ -256,7 +254,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-24 09:07:29" itemprop="dateModified" datetime="2019-11-24T09:07:29+00:00">2019-11-24</time>
+                <time title="修改时间：2019-11-25 05:30:48" itemprop="dateModified" datetime="2019-11-25T05:30:48+00:00">2019-11-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -301,17 +299,21 @@
 <li>文档中对该属性的注释：</li>
 </ol>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// return current device orientation.</span></span><br><span class="line"><span class="comment">// this will return UIDeviceOrientationUnknown unless device orientation notifications are being generated.</span></span><br><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">readonly</span>) <span class="built_in">UIDeviceOrientation</span> orientation;</span><br></pre></td></tr></table></figure>
+
 <p>所以更推荐下面这种用法：</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (![<span class="built_in">UIDevice</span> currentDevice].generatesDeviceOrientationNotifications) &#123;</span><br><span class="line">        [[<span class="built_in">UIDevice</span> currentDevice] beginGeneratingDeviceOrientationNotifications];</span><br><span class="line"> &#125;</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"%d"</span>,[<span class="built_in">UIDevice</span> currentDevice].orientation);</span><br><span class="line"></span><br><span class="line">[[<span class="built_in">UIDevice</span> currentDevice] endGeneratingDeviceOrientationNotifications];</span><br></pre></td></tr></table></figure>
-<ol>
+
+<ol start="2">
 <li>系统横竖屏开关关闭时</li>
 </ol>
 <p>如果关闭了系统的横竖屏切换开关，即系统层级只允许竖屏时，再通过上述方式获取到的设备方向将永远是<code>UIDeviceOrientationUnknown</code>。可以通过<code>Core Motion</code>中的<code>CMMotionManager</code>来获取当前设备方向。</p>
 <h4 id="Interface-Orientation"><a href="#Interface-Orientation" class="headerlink" title="Interface Orientation"></a><code>Interface Orientation</code></h4><p>界面显示的方向，由类型<code>UIInterfaceOrientation</code>表示。当前界面显示方向有以下两种方式获取：</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"%d"</span>,[<span class="built_in">UIApplication</span> sharedApplication].statusBarOrientation);</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"%d"</span>,viewController.interfaceOrientation);</span><br></pre></td></tr></table></figure>
+
 <p>即可以通过系统<code>statusBar</code>的方向或者<code>viewController</code>的方向来获取当前界面方向。</p>
 <h4 id="二者区别"><a href="#二者区别" class="headerlink" title="二者区别"></a>二者区别</h4><p>通过<code>UIDevice</code>获取到的设备方向在手机旋转时是实时的，通过<code>UIApplication</code>的<code>statusBar</code>或者<code>viewController</code>获取到的界面方向在下述方法：</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>)willRotateToInterfaceOrientation:(<span class="built_in">UIInterfaceOrientation</span>)toInterfaceOrientation </span><br><span class="line">                                duration:(<span class="built_in">NSTimeInterval</span>)duration</span><br></pre></td></tr></table></figure>
+
 <p>调用以后才会被更改成最新的值。</p>
 <h3 id="相关枚举定义"><a href="#相关枚举定义" class="headerlink" title="相关枚举定义"></a>相关枚举定义</h3><p>目前屏幕旋转相关的枚举变量定义主要包括以下三种：</p>
 <ul>
@@ -321,11 +323,15 @@
 </ul>
 <p>相信有一部分人在开发过程中对三个枚举变量类型没有明确的区分概念，甚至混用。</p>
 <h4 id="UIDeviceOrientation"><a href="#UIDeviceOrientation" class="headerlink" title="UIDeviceOrientation"></a><code>UIDeviceOrientation</code></h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSInteger</span>, <span class="built_in">UIDeviceOrientation</span>) &#123;</span><br><span class="line">    <span class="built_in">UIDeviceOrientationUnknown</span>,</span><br><span class="line">    <span class="built_in">UIDeviceOrientationPortrait</span>,            <span class="comment">// Device oriented vertically, home button on the bottom</span></span><br><span class="line">    <span class="built_in">UIDeviceOrientationPortraitUpsideDown</span>,  <span class="comment">// Device oriented vertically, home button on the top</span></span><br><span class="line">    <span class="built_in">UIDeviceOrientationLandscapeLeft</span>,       <span class="comment">// Device oriented horizontally, home button on the right</span></span><br><span class="line">    <span class="built_in">UIDeviceOrientationLandscapeRight</span>,      <span class="comment">// Device oriented horizontally, home button on the left</span></span><br><span class="line">    <span class="built_in">UIDeviceOrientationFaceUp</span>,              <span class="comment">// Device oriented flat, face up</span></span><br><span class="line">    <span class="built_in">UIDeviceOrientationFaceDown</span>             <span class="comment">// Device oriented flat, face down</span></span><br><span class="line">&#125; __TVOS_PROHIBITED;</span><br></pre></td></tr></table></figure>
+
 <h4 id="iOS-6-之前用于控制屏幕方向的枚举UIInterfaceOrientation"><a href="#iOS-6-之前用于控制屏幕方向的枚举UIInterfaceOrientation" class="headerlink" title="iOS 6 之前用于控制屏幕方向的枚举UIInterfaceOrientation"></a>iOS 6 之前用于控制屏幕方向的枚举<code>UIInterfaceOrientation</code></h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSInteger</span>, <span class="built_in">UIInterfaceOrientation</span>) &#123;</span><br><span class="line">    <span class="built_in">UIInterfaceOrientationUnknown</span>            = <span class="built_in">UIDeviceOrientationUnknown</span>,</span><br><span class="line">    <span class="built_in">UIInterfaceOrientationPortrait</span>           = <span class="built_in">UIDeviceOrientationPortrait</span>,</span><br><span class="line">    <span class="built_in">UIInterfaceOrientationPortraitUpsideDown</span> = <span class="built_in">UIDeviceOrientationPortraitUpsideDown</span>,</span><br><span class="line">    <span class="built_in">UIInterfaceOrientationLandscapeLeft</span>      = <span class="built_in">UIDeviceOrientationLandscapeRight</span>,</span><br><span class="line">    <span class="built_in">UIInterfaceOrientationLandscapeRight</span>     = <span class="built_in">UIDeviceOrientationLandscapeLeft</span></span><br><span class="line">&#125; __TVOS_PROHIBITED;</span><br></pre></td></tr></table></figure>
+
+
 <blockquote>
 <p>从宏定义可知，<code>UIDeviceOrientation</code>方向比<code>UIInterfaceOrientation</code>多了两个定义：<code>UIDeviceOrientationFaceUp</code>和<code>UIDeviceOrientationFaceDown</code>，分别表示手机水平放置，屏幕向上和屏幕向下。</p>
 </blockquote>
 <h4 id="iOS-6-及之后版本用于控制屏幕方向的枚举UIInterfaceOrientationMask"><a href="#iOS-6-及之后版本用于控制屏幕方向的枚举UIInterfaceOrientationMask" class="headerlink" title="iOS 6 及之后版本用于控制屏幕方向的枚举UIInterfaceOrientationMask"></a>iOS 6 及之后版本用于控制屏幕方向的枚举<code>UIInterfaceOrientationMask</code></h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_OPTIONS</span>(<span class="built_in">NSUInteger</span>, <span class="built_in">UIInterfaceOrientationMask</span>) &#123;</span><br><span class="line">    <span class="built_in">UIInterfaceOrientationMaskPortrait</span> = (<span class="number">1</span> &lt;&lt; <span class="built_in">UIInterfaceOrientationPortrait</span>),</span><br><span class="line">    <span class="built_in">UIInterfaceOrientationMaskLandscapeLeft</span> = (<span class="number">1</span> &lt;&lt; <span class="built_in">UIInterfaceOrientationLandscapeLeft</span>),</span><br><span class="line">    <span class="built_in">UIInterfaceOrientationMaskLandscapeRight</span> = (<span class="number">1</span> &lt;&lt; <span class="built_in">UIInterfaceOrientationLandscapeRight</span>),</span><br><span class="line">    <span class="built_in">UIInterfaceOrientationMaskPortraitUpsideDown</span> = (<span class="number">1</span> &lt;&lt; <span class="built_in">UIInterfaceOrientationPortraitUpsideDown</span>),</span><br><span class="line">    <span class="built_in">UIInterfaceOrientationMaskLandscape</span> = (<span class="built_in">UIInterfaceOrientationMaskLandscapeLeft</span> | <span class="built_in">UIInterfaceOrientationMaskLandscapeRight</span>),</span><br><span class="line">    <span class="built_in">UIInterfaceOrientationMaskAll</span> = (<span class="built_in">UIInterfaceOrientationMaskPortrait</span> | <span class="built_in">UIInterfaceOrientationMaskLandscapeLeft</span> | <span class="built_in">UIInterfaceOrientationMaskLandscapeRight</span> | <span class="built_in">UIInterfaceOrientationMaskPortraitUpsideDown</span>),</span><br><span class="line">    <span class="built_in">UIInterfaceOrientationMaskAllButUpsideDown</span> = (<span class="built_in">UIInterfaceOrientationMaskPortrait</span> | <span class="built_in">UIInterfaceOrientationMaskLandscapeLeft</span> | <span class="built_in">UIInterfaceOrientationMaskLandscapeRight</span>),</span><br><span class="line">&#125; __TVOS_PROHIBITED;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <ul>
 <li><p>iOS 6 及之后版本使用的 UIInterfaceOrientationMask 类型来控制屏幕屏幕方向，该类型也新增加了几个枚举取值，可用一个枚举取值来代表多个屏幕方向。</p>
@@ -360,8 +366,7 @@
 <th>avilable value</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>UIInterfaceOrientation</td>
 <td>initial interface orientation</td>
 <td>Specifies the initial orientation of the app’s user interface.</td>
@@ -373,23 +378,27 @@
 <td>Specifies the orientations that the app supports.</td>
 <td>UIInterfaceOrientationPortrait <br> UIInterfaceOrientationPortraitUpsideDown <br> UIInterfaceOrientationLandscapeLeft <br> UIInterfaceOrientationLandscapeRight</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>在Info.plist中设置之后,这个app里所有的viewController支持的自动旋转方向都只能是app支持的方向的子集.</p>
 <p>eg:</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">key</span>&gt;</span>UISupportedInterfaceOrientations<span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">array</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">string</span>&gt;</span>UIInterfaceOrientationPortrait<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">string</span>&gt;</span>UIInterfaceOrientationLandscapeLeft<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">string</span>&gt;</span>UIInterfaceOrientationLandscapeRight<span class="tag">&lt;/<span class="name">string</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">array</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>此配置其实跟工程中 <code>Target</code> 的 <code>Summary</code> 界面中的 <code>Device Orientation</code> 配置是一致的，修改任意一边，另一个边都会同步的修改。</p>
 <p>eg:</p>
-<p><img src="/2017/07/05/iOS/17070501.iOS屏幕旋转知识点以及实现/index/setting.png" alt="setting"></p>
+<p><img src="/2017/07/05/iOS/17070501.iOS%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%AC%E7%9F%A5%E8%AF%86%E7%82%B9%E4%BB%A5%E5%8F%8A%E5%AE%9E%E7%8E%B0/index/setting.png" alt="setting"></p>
 <h4 id="UIWindow的方向控制（iOS6及以上版本才有效）"><a href="#UIWindow的方向控制（iOS6及以上版本才有效）" class="headerlink" title="UIWindow的方向控制（iOS6及以上版本才有效）"></a><code>UIWindow</code>的方向控制（iOS6及以上版本才有效）</h4><p><code>iOS6</code>的<code>UIApplicationDelegate</code>提供了下述方法，能够指定 UIWindow 中的界面的屏幕方向：</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="built_in">UIInterfaceOrientationMask</span>)application:(<span class="built_in">UIApplication</span> *)application supportedInterfaceOrientationsForWindow:(<span class="keyword">nullable</span> <span class="built_in">UIWindow</span> *)window  <span class="built_in">NS_AVAILABLE_IOS</span>(<span class="number">6</span>_0) __TVOS_PROHIBITED;</span><br></pre></td></tr></table></figure>
+
 <p>该方法默认值为<code>Info.plist</code>中配置的<code>Supported Interface Orientations</code>项的值。</p>
 <p><code>iOS</code>中通常只有一个<code>window</code>，所以此处的控制也可以视为全局控制。</p>
 <h4 id="UIViewController的方向控制"><a href="#UIViewController的方向控制" class="headerlink" title="UIViewController的方向控制"></a><code>UIViewController</code>的方向控制</h4><h5 id="iOS5中控制屏幕旋转的方法："><a href="#iOS5中控制屏幕旋转的方法：" class="headerlink" title="iOS5中控制屏幕旋转的方法："></a>iOS5中控制屏幕旋转的方法：</h5><p>在 iOS 6 之前，单个界面的屏幕方向控制，都使用 UIViewController 类中的这个方法：</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Applications should use supportedInterfaceOrientations and/or shouldAutorotate..</span></span><br><span class="line">- (<span class="built_in">BOOL</span>)shouldAutorotateToInterfaceOrientation:(<span class="built_in">UIInterfaceOrientation</span>)toInterfaceOrientation <span class="built_in">NS_DEPRECATED_IOS</span>(<span class="number">2</span>_0, <span class="number">6</span>_0);</span><br></pre></td></tr></table></figure>
+
 <p>如果打算支持<code>toInterfaceOrientation</code>对应的方向就返回YES，否则返回NO。默认情况下，此方法只有参数为 UIInterfaceOrientationPortrait 时，返回值才为真，即默认只支持竖屏向上。下面的例子中，表示支持横屏向右及横屏向左两个方向。</p>
 <p>eg:</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 是否支持旋转到某个屏幕方向</span></span><br><span class="line">- (<span class="built_in">BOOL</span>)shouldAutorotateToInterfaceOrientation:(<span class="built_in">UIInterfaceOrientation</span>)toInterfaceOrientation</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> ((toInterfaceOrientation == <span class="built_in">UIInterfaceOrientationLandscapeRight</span>) |</span><br><span class="line">	            (toInterfaceOrientation == <span class="built_in">UIInterfaceOrientationLandscapeLeft</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
 <h5 id="iOS6以及以后版本中控制屏幕旋转相关方法："><a href="#iOS6以及以后版本中控制屏幕旋转相关方法：" class="headerlink" title="iOS6以及以后版本中控制屏幕旋转相关方法："></a>iOS6以及以后版本中控制屏幕旋转相关方法：</h5><blockquote>
 <p><strong><em><code>限制</code></em></strong></p>
 <ul>
@@ -404,6 +413,8 @@
 </blockquote>
 <p>只有以上两种情况时候，以下的<code>orientations</code>相关方法才会起作用（才会被调用），当前<code>controller</code>及其所有的<code>childViewController</code>都在此作用范围内。</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// New Autorotation support.</span></span><br><span class="line"><span class="comment">// 是否支持转屏</span></span><br><span class="line"><span class="comment">// @property(nonatomic, readonly) BOOL shouldAutorotate NS_AVAILABLE_IOS(6_0) __TVOS_PROHIBITED;</span></span><br><span class="line">- (<span class="built_in">BOOL</span>)shouldAutorotate <span class="built_in">NS_AVAILABLE_IOS</span>(<span class="number">6</span>_0) __TVOS_PROHIBITED;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 支持的屏幕方向，此处可直接返回 UIInterfaceOrientationMask 类型</span></span><br><span class="line"><span class="comment">// 也可以返回多个 UIInterfaceOrientationMask 取或运算后的值</span></span><br><span class="line">- (<span class="built_in">UIInterfaceOrientationMask</span>)supportedInterfaceOrientations <span class="built_in">NS_AVAILABLE_IOS</span>(<span class="number">6</span>_0) __TVOS_PROHIBITED;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// Returns interface orientation masks.</span></span><br><span class="line"><span class="comment">// 优先方向</span></span><br><span class="line">- (<span class="built_in">UIInterfaceOrientation</span>)preferredInterfaceOrientationForPresentation <span class="built_in">NS_AVAILABLE_IOS</span>(<span class="number">6</span>_0) __TVOS_PROHIBITED;</span><br></pre></td></tr></table></figure>
+
+
 <ul>
 <li><p><code>- shouldAutorotate</code></p>
 <blockquote>
@@ -423,6 +434,7 @@
 </ul>
 <h5 id="attemptRotationToDeviceOrientation方法"><a href="#attemptRotationToDeviceOrientation方法" class="headerlink" title="attemptRotationToDeviceOrientation方法"></a>attemptRotationToDeviceOrientation方法</h5><p>从iOS5开始有了这个新方法：</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// call this method when your return value from shouldAutorotateToInterfaceOrientation: changes</span></span><br><span class="line"><span class="comment">// if the current interface orientation does not match the current device orientation, </span></span><br><span class="line"><span class="comment">// a rotation may occur provided all relevant view controllers now return YES from shouldAutorotateToInterfaceOrientation:</span></span><br><span class="line">+ (<span class="keyword">void</span>)attemptRotationToDeviceOrientation <span class="built_in">NS_AVAILABLE_IOS</span>(<span class="number">5</span>_0);</span><br></pre></td></tr></table></figure>
+
 <p>该方法的使用场景是<code>Interface Orientation</code>和<code>Device Orientation</code>不一致，但希望通过重新指定<code>Interface Orientation</code>的值，立即实现二者一致；如果这时只是更改了支持的<code>Interface Orientation</code>的值，没有调用<code>attemptRotationToDeviceOrientation</code>，那么下次<code>Device Orientation</code>变化的时候才会实现二者一致，关键点在于能不能立即实现。</p>
 <blockquote>
 <p>举个例子：</p>
@@ -438,30 +450,40 @@
 <h3 id="强制屏幕旋转"><a href="#强制屏幕旋转" class="headerlink" title="强制屏幕旋转"></a>强制屏幕旋转</h3><p>如果<code>Interface</code>和<code>Device</code>方向不一样，想强制将<code>Interface</code>旋转成<code>Device</code>的方向，可以通过<code>attemptRotationToDeviceOrientation</code>实现，但是如果想将<code>Interface</code>强制旋转成任一指定方向，该方式就无能为力了。</p>
 <p>不过聪明的开发者们总能想到解决方式：</p>
 <h4 id="私有方法"><a href="#私有方法" class="headerlink" title="私有方法"></a>私有方法</h4><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[[<span class="built_in">UIDevice</span> currentDevice] setOrientation:<span class="built_in">UIInterfaceOrientationPortrait</span>];</span><br></pre></td></tr></table></figure>
+
 <p>但是现在苹果已经将该方法私有化了，越狱开发的同学可以试试，或者自己想法子骗过苹果审核吧。</p>
 <blockquote>
 <p>可能骗过审核的方法：</p>
 <ul>
 <li>objc: <code>NSInvocation</code></li>
 </ul>
+</blockquote>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> ([[<span class="built_in">UIDevice</span> currentDevice] respondsToSelector:<span class="keyword">@selector</span>(setOrientation:)]) &#123;</span><br><span class="line">    SEL selector = <span class="built_in">NSSelectorFromString</span>(<span class="string">@"setOrientation:"</span>);</span><br><span class="line">    <span class="built_in">NSInvocation</span> *invocation = [<span class="built_in">NSInvocation</span> invocationWithMethodSignature:[<span class="built_in">UIDevice</span> instanceMethodSignatureForSelector:selector]];</span><br><span class="line">    [invocation setSelector:selector];</span><br><span class="line">    [invocation setTarget:[<span class="built_in">UIDevice</span> currentDevice]];</span><br><span class="line">    <span class="keyword">int</span> val = <span class="built_in">UIInterfaceOrientationLandscapeRight</span>;</span><br><span class="line">    [invocation setArgument:&amp;val atIndex:<span class="number">2</span>];</span><br><span class="line">    [invocation invoke];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
 <ul>
 <li>objc: <code>performSelector: withObject:</code></li>
 </ul>
+</blockquote>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> ([[<span class="built_in">UIDevice</span> currentDevice] respondsToSelector:<span class="keyword">@selector</span>(setOrientation:)]) &#123;  </span><br><span class="line">    [[<span class="built_in">UIDevice</span> currentDevice] performSelector:<span class="keyword">@selector</span>(setOrientation:)  </span><br><span class="line">                                   withObject:(<span class="keyword">id</span>)<span class="built_in">UIInterfaceOrientationLandscapeRight</span>];  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
 <ul>
 <li>swift: <code>setValue(_ , forKey: String)</code></li>
 </ul>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">UIDevice</span>.current.setValue(<span class="type">UIDeviceOrientation</span>.portrait.rawValue, forKey: <span class="string">"orientation"</span>)</span><br></pre></td></tr></table></figure>
 </blockquote>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">UIDevice</span>.current.setValue(<span class="type">UIDeviceOrientation</span>.portrait.rawValue, forKey: <span class="string">"orientation"</span>)</span><br></pre></td></tr></table></figure>
+
+
 <h4 id="旋转view的transform"><a href="#旋转view的transform" class="headerlink" title="旋转view的transform"></a>旋转view的transform</h4><p>也可以通过旋转<code>view</code>的<code>transform</code>属性达到强制旋转屏幕方向的目的，但个人感觉这不是靠谱的思路，可能会带来某些诡异的问题。</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">UIView</span>.animate(withDuration: <span class="type">UIApplication</span>.shared.statusBarOrientationAnimationDuration) &#123;</span><br><span class="line">    <span class="keyword">self</span>.view.transform = <span class="type">CGAffineTransform</span>.identity</span><br><span class="line">    <span class="keyword">self</span>.view.transform = <span class="type">CGAffineTransform</span>.<span class="keyword">init</span>(rotationAngle: <span class="type">CGFloat</span>(<span class="type">Double</span>.pi / <span class="number">2</span>))</span><br><span class="line">    <span class="keyword">self</span>.view.bounds = <span class="type">CGRect</span>.<span class="keyword">init</span>(x: <span class="number">0</span>, y: <span class="number">0</span>, width: <span class="type">UIScreen</span>.main.bounds.height, height: <span class="type">UIScreen</span>.main.bounds.width)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h4 id="主动触发Orientation机制"><a href="#主动触发Orientation机制" class="headerlink" title="主动触发Orientation机制"></a>主动触发Orientation机制</h4><p>要是能主动触发系统的orientation机制，调用orientation相关方法，使新设置的orientation值起作用就好了。这样只要提前设置好想要支持的orientation，然后主动触发orientation机制，便能实现将interface orientation旋转至任意方向的目的。</p>
 <p>万能的stackoverflow上提供了一种主动触发的方式：</p>
 <p>在<code>iOS4</code>和<code>iOS6</code>以后：</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">UIViewController</span> *vc = [[<span class="built_in">UIViewController</span> alloc]init];</span><br><span class="line">[<span class="keyword">self</span> presentModalViewController:vc animated:<span class="literal">NO</span>];</span><br><span class="line">[<span class="keyword">self</span> dismissModalViewControllerAnimated:<span class="literal">NO</span>];</span><br><span class="line">[vc release];</span><br></pre></td></tr></table></figure>
+
 <p><code>iOS5</code>中：</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">UIWindow</span> *window = [[<span class="built_in">UIApplication</span> sharedApplication] keyWindow];</span><br><span class="line"><span class="built_in">UIView</span> *view = [window.subviews objectAtIndex:<span class="number">0</span>];</span><br><span class="line">[view removeFromSuperview];</span><br><span class="line">[window addSubview:view];</span><br></pre></td></tr></table></figure>
+
 <p>这种方式会触发UIKit重新调用<code>Controller</code>的<code>Orientation</code>相关方法，以达到在<code>Device</code>方向不变的情况下改变<code>Interface</code>方向的目的。</p>
 <h3 id="实现并兼容iOS6-8-以后所有版本"><a href="#实现并兼容iOS6-8-以后所有版本" class="headerlink" title="实现并兼容iOS6(8)以后所有版本"></a>实现并兼容iOS6(8)以后所有版本</h3><blockquote>
 <ul>
@@ -496,10 +518,13 @@
 </li>
 </ul>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">application</span><span class="params">(<span class="number">_</span> application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?)</span></span> -&gt; <span class="type">UIInterfaceOrientationMask</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="type">UIInterfaceOrientationMask</span>.allButUpsideDown</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
 <h4 id="定义协议OrientationProtocol并对UIViewController扩展实现"><a href="#定义协议OrientationProtocol并对UIViewController扩展实现" class="headerlink" title="定义协议OrientationProtocol并对UIViewController扩展实现"></a>定义协议OrientationProtocol并对UIViewController扩展实现</h4><blockquote>
 <p>协议为了方便各个子viewcontroller自行控制自己的方向，只需要重写协议内的函数实现即可，无需在控制原有的几个orientation函数</p>
 </blockquote>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// MARK: OrientationProtocol viewcontroller旋转控制</span></span><br><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">OrientationProtocol</span> </span>&#123;</span><br><span class="line">    <span class="comment">// supportedInterfaceOrientations</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">orientations</span><span class="params">()</span></span> -&gt; <span class="type">UIInterfaceOrientationMask</span></span><br><span class="line">    <span class="comment">// shouldAutorotate</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">autorotate</span><span class="params">()</span></span> -&gt; <span class="type">Bool</span></span><br><span class="line">    <span class="comment">// preferredInterfaceOrientationForPresentation</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">preferredOrientation</span><span class="params">()</span></span> -&gt; <span class="type">UIInterfaceOrientation</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">UIViewController</span>: <span class="title">OrientationProtocol</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">orientations</span><span class="params">()</span></span> -&gt; <span class="type">UIInterfaceOrientationMask</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="type">UIInterfaceOrientationMask</span>.portrait</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">autorotate</span><span class="params">()</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">preferredOrientation</span><span class="params">()</span></span> -&gt; <span class="type">UIInterfaceOrientation</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="type">UIInterfaceOrientation</span>.portrait</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h4 id="设置BaseViewController"><a href="#设置BaseViewController" class="headerlink" title="设置BaseViewController"></a>设置BaseViewController</h4><blockquote>
 <p>为了使所有的controller默认竖屏而不需要每个controller都进行设置</p>
 </blockquote>
@@ -509,10 +534,14 @@
 <li>所有的BaseController实现以下扩展</li>
 </ul>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">BaseViewController</span> </span>&#123;</span><br><span class="line">    <span class="keyword">override</span> <span class="keyword">var</span> shouldAutorotate: <span class="type">Bool</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="keyword">var</span> supportedInterfaceOrientations: <span class="type">UIInterfaceOrientationMask</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="type">UIInterfaceOrientationMask</span>.portrait</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="keyword">var</span> preferredInterfaceOrientationForPresentation: <span class="type">UIInterfaceOrientation</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="type">UIInterfaceOrientation</span>.portrait</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
 <h4 id="修改window所有的rootViewController"><a href="#修改window所有的rootViewController" class="headerlink" title="修改window所有的rootViewController"></a>修改window所有的rootViewController</h4><ul>
 <li><code>AppDelegat.getCurrentViewController()</code></li>
 </ul>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AppDelegate</span>: <span class="title">UIResponder</span>, <span class="title">UIApplicationDelegate</span> </span>&#123;</span><br><span class="line">........</span><br><span class="line">........</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取当前屏幕显示的viewcontroller</span></span><br><span class="line">    <span class="keyword">static</span> <span class="function"><span class="keyword">func</span> <span class="title">getCurrentViewController</span><span class="params">()</span></span> -&gt; <span class="type">UIViewController</span>? &#123;</span><br><span class="line">        <span class="comment">// 嵌套函数，寻找当前屏幕上显示的viewcontroller</span></span><br><span class="line">        <span class="function"><span class="keyword">func</span> <span class="title">findBestViewController</span><span class="params">(from viewController: UIViewController?)</span></span> -&gt; <span class="type">UIViewController</span>? &#123;</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">let</span> presentedViewController = viewController?.presentedViewController &#123;</span><br><span class="line">                <span class="comment">// 返回presentedViewController</span></span><br><span class="line">                <span class="keyword">return</span> findBestViewController(from: presentedViewController)</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> <span class="keyword">let</span> navigationViewController = viewController <span class="keyword">as</span>? <span class="type">UINavigationController</span> &#123;</span><br><span class="line">                <span class="comment">// 返回最顶部的vc</span></span><br><span class="line">                <span class="keyword">if</span> navigationViewController.viewControllers.<span class="built_in">count</span> &gt; <span class="number">0</span> &#123;</span><br><span class="line">                    <span class="keyword">return</span> findBestViewController(from: navigationViewController.topViewController)</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">return</span> navigationViewController</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> <span class="keyword">let</span> tabBarController = viewController <span class="keyword">as</span>? <span class="type">UITabBarController</span> &#123;</span><br><span class="line">                <span class="comment">// 返回当前选择的vc</span></span><br><span class="line">                <span class="keyword">if</span> (tabBarController.viewControllers?.<span class="built_in">count</span> ?? <span class="number">0</span>) &gt; <span class="number">0</span> &#123;</span><br><span class="line">                    <span class="keyword">return</span> findBestViewController(from: tabBarController.selectedViewController)</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">return</span> tabBarController</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">// 普通vc返回自己</span></span><br><span class="line">                <span class="keyword">return</span> viewController</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">let</span> rootViewController = <span class="type">UIApplication</span>.shared.keyWindow?.rootViewController</span><br><span class="line">        <span class="keyword">return</span> findBestViewController(from: rootViewController)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">........</span><br><span class="line">........</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AppDelegate</span>: <span class="title">UIResponder</span>, <span class="title">UIApplicationDelegate</span> </span>&#123;</span><br><span class="line">........</span><br><span class="line">........</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取当前屏幕显示的viewcontroller</span></span><br><span class="line">    <span class="keyword">static</span> <span class="function"><span class="keyword">func</span> <span class="title">getCurrentViewController</span><span class="params">()</span></span> -&gt; <span class="type">UIViewController?</span> &#123;</span><br><span class="line">        <span class="comment">// 嵌套函数，寻找当前屏幕上显示的viewcontroller</span></span><br><span class="line">        <span class="function"><span class="keyword">func</span> <span class="title">findBestViewController</span><span class="params">(from viewController: UIViewController?)</span></span> -&gt; <span class="type">UIViewController?</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">let</span> presentedViewController = viewController?.presentedViewController &#123;</span><br><span class="line">                <span class="comment">// 返回presentedViewController</span></span><br><span class="line">                <span class="keyword">return</span> findBestViewController(from: presentedViewController)</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> <span class="keyword">let</span> navigationViewController = viewController <span class="keyword">as</span>? <span class="type">UINavigationController</span> &#123;</span><br><span class="line">                <span class="comment">// 返回最顶部的vc</span></span><br><span class="line">                <span class="keyword">if</span> navigationViewController.viewControllers.<span class="built_in">count</span> &gt; <span class="number">0</span> &#123;</span><br><span class="line">                    <span class="keyword">return</span> findBestViewController(from: navigationViewController.topViewController)</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">return</span> navigationViewController</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> <span class="keyword">let</span> tabBarController = viewController <span class="keyword">as</span>? <span class="type">UITabBarController</span> &#123;</span><br><span class="line">                <span class="comment">// 返回当前选择的vc</span></span><br><span class="line">                <span class="keyword">if</span> (tabBarController.viewControllers?.<span class="built_in">count</span> ?? <span class="number">0</span>) &gt; <span class="number">0</span> &#123;</span><br><span class="line">                    <span class="keyword">return</span> findBestViewController(from: tabBarController.selectedViewController)</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">return</span> tabBarController</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">// 普通vc返回自己</span></span><br><span class="line">                <span class="keyword">return</span> viewController</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">let</span> rootViewController = <span class="type">UIApplication</span>.shared.keyWindow?.rootViewController</span><br><span class="line">        <span class="keyword">return</span> findBestViewController(from: rootViewController)</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">........</span><br><span class="line">........</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>RootViewController设置获取当前显示的controller进行变换旋转值的设置<blockquote>
 <p>这里兼容了iOS10之前的modal的controller需要rootViewController设置方向的问题</p>
@@ -520,11 +549,17 @@
 </li>
 </ul>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// MARK: 项目的RootViewController是MainTabBarController</span></span><br><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">MainTabBarController</span> </span>&#123;</span><br><span class="line">    <span class="keyword">override</span> <span class="keyword">var</span> supportedInterfaceOrientations: <span class="type">UIInterfaceOrientationMask</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">let</span> vc = <span class="type">AppDelegate</span>.getCurrentViewController() &#123;</span><br><span class="line">            <span class="keyword">return</span> vc.orientations()</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="type">UIInterfaceOrientationMask</span>.portrait</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="keyword">var</span> shouldAutorotate: <span class="type">Bool</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">let</span> vc = <span class="type">AppDelegate</span>.getCurrentViewController() &#123;</span><br><span class="line">            <span class="keyword">return</span> vc.autorotate()</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="keyword">var</span> preferredInterfaceOrientationForPresentation: <span class="type">UIInterfaceOrientation</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">let</span> vc = <span class="type">AppDelegate</span>.getCurrentViewController() &#123;</span><br><span class="line">            <span class="keyword">return</span> vc.preferredOrientation()</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="type">UIInterfaceOrientation</span>.portrait</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h4 id="设置个别的可以旋转方向的controller"><a href="#设置个别的可以旋转方向的controller" class="headerlink" title="设置个别的可以旋转方向的controller"></a>设置个别的可以旋转方向的controller</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">SomeSpecialViewController</span> </span>&#123;</span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">orientations</span><span class="params">()</span></span> -&gt; <span class="type">UIInterfaceOrientationMask</span> &#123;</span><br><span class="line">        <span class="comment">// 返回允许的方向</span></span><br><span class="line">        <span class="keyword">return</span> <span class="type">UIInterfaceOrientationMask</span>.allButUpsideDown</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">autorotate</span><span class="params">()</span></span> -&gt; <span class="type">Bool</span> &#123;</span><br><span class="line">        <span class="comment">// 设置允许自动旋转</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">preferredOrientation</span><span class="params">()</span></span> -&gt; <span class="type">UIInterfaceOrientation</span> &#123;</span><br><span class="line">        <span class="comment">// 设置优先的方向</span></span><br><span class="line">        <span class="keyword">return</span> <span class="type">UIInterfaceOrientation</span>.portrait</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
 <h4 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h4><p>在实现过程中发现，如果不设置BaseViewController中的方法，只进行UIViewController扩展，会出现一种情况：</p>
 <p>从一个不可旋转的页面进入一个可旋转页面后，旋转到其他方向，返回上一个页面，这时候上一个页面也转动了….</p>
 <p>所以使用baseViewController的方式进行锁死不可旋转页面的方向，目前没发现其他的更好的处理方式。</p>
-<p><br><br><br><br><br></p>
+<br>
+<br>
+<br>
+
 <hr>
 <p>参考资料：</p>
 <ol>
@@ -532,7 +567,7 @@
 <li><a href="http://foggry.com/blog/2014/08/08/ping-mu-xuan-zhuan-xue-xi-bi-ji/" target="_blank" rel="noopener">iOS屏幕旋转学习笔记</a></li>
 <li><a href="http://sxcheen.com/2016/04/29/iOS-Orientations/" target="_blank" rel="noopener">iOS屏幕旋转二三事(Orientations)</a></li>
 <li><a href="http://zhenby.com/blog/2013/08/20/talk-ios-orientation/" target="_blank" rel="noopener">iOS 屏幕方向那点事儿</a></li>
-<li><a href="http://www.cnblogs.com/jhzhu/p/3480885.html" target="_blank" rel="noopener">IOS Orientation, 想怎么转就怎么转~~~</a></li>
+<li><a href="http://www.cnblogs.com/jhzhu/p/3480885.html" target="_blank" rel="noopener">IOS Orientation, 想怎么转就怎么转<del>~</del></a></li>
 <li><a href="https://stackoverflow.com/questions/12520030/how-to-force-a-uiviewcontroller-to-portrait-orientation-in-ios-6/14445888#14445888" target="_blank" rel="noopener">How to force a UIViewController to Portrait orientation in iOS 6</a></li>
 <li><a href="https://developer.apple.com/library/content/qa/qa1688/_index.html" target="_blank" rel="noopener">Why won’t my UIViewController rotate with the device?</a></li>
 <li><a href="http://blog.csdn.net/volcan1987/article/details/11563741" target="_blank" rel="noopener">iOS两个强制旋转屏幕的方法</a></li>
@@ -548,14 +583,14 @@
           <div class="post-tags">
               <a href="/tags/iOS/" rel="tag"># iOS</a>
               <a href="/tags/Orientation/" rel="tag"># Orientation</a>
-              <a href="/tags/屏幕旋转/" rel="tag"># 屏幕旋转</a>
+              <a href="/tags/%E5%B1%8F%E5%B9%95%E6%97%8B%E8%BD%AC/" rel="tag"># 屏幕旋转</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/2017/07/04/iOS/17070401.设置NavigationBar隐藏和显示/index/" rel="next" title="设置NavigationBar隐藏和显示">
+                <a href="/2017/07/04/iOS/17070401.%E8%AE%BE%E7%BD%AENavigationBar%E9%9A%90%E8%97%8F%E5%92%8C%E6%98%BE%E7%A4%BA/index/" rel="next" title="设置NavigationBar隐藏和显示">
                   <i class="fa fa-chevron-left"></i> 设置NavigationBar隐藏和显示
                 </a>
             </div>
@@ -563,7 +598,7 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/2017/07/05/iOS/17070502.在SDWebImage基础上添加UIImageView扩展使其可以缓存/index/" rel="prev" title="在SDWebImage基础上添加UIImageView扩展使其可以缓存">
+                <a href="/2017/07/05/iOS/17070502.%E5%9C%A8SDWebImage%E5%9F%BA%E7%A1%80%E4%B8%8A%E6%B7%BB%E5%8A%A0UIImageView%E6%89%A9%E5%B1%95%E4%BD%BF%E5%85%B6%E5%8F%AF%E4%BB%A5%E7%BC%93%E5%AD%98/index/" rel="prev" title="在SDWebImage基础上添加UIImageView扩展使其可以缓存">
                   在SDWebImage基础上添加UIImageView扩展使其可以缓存 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
@@ -641,7 +676,7 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/tobedefined" title="GitHub &rarr; https://github.com/tobedefined" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/tobedefined" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;tobedefined" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
   </div>
 
@@ -670,10 +705,10 @@
   </span>
   <span class="author" itemprop="copyrightHolder">TBD</span>
 </div>
-  <div class="powered-by">Hosted by <a class="theme-link" target="_blank" href="https://pages.coding.net/">Coding Pages</a> And <a class="theme-link" target="_blank" href="https://pages.github.com/">GitHub Pages</a>, Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.7.1
+  <div class="powered-by">Hosted by <a class="theme-link" target="_blank" href="https://pages.coding.net/">Coding Pages</a> And <a class="theme-link" target="_blank" href="https://pages.github.com/">GitHub Pages</a>, Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://mist.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.5.0
+  <div class="theme-info">主题 – <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.5.0
   </div>
 
         
@@ -737,7 +772,7 @@
       repo: 'tobedefined.github.io',
       owner: 'tobedefined',
       admin: ['tobedefined'],
-      id: '51736c0cbeed5bcf6cb3d1ea24ec168a',
+      id: '1d3a0394dc00a161caa11001a4d6cec1',
         language: '',
       distractionFreeMode: 'true'
     });

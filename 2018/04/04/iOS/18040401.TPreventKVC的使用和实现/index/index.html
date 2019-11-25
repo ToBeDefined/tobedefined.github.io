@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.7.1">
+<meta name="generator" content="Hexo 4.0.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
@@ -52,20 +52,18 @@
   };
 </script>
 
-  <meta name="description" content="使用`+load`方法替换NSObject的 `-setValue:forUndefinedKey:` / `valueForUndefinedKey:` / `setNilValueForKey:` 这几个方法，防止产生 `NSUnknownKeyException` 和 `NSInvalidArgumentException` 异常，引发崩溃。">
+  <meta name="description" content="使用&#96;+load&#96;方法替换NSObject的 &#96;-setValue:forUndefinedKey:&#96; &#x2F; &#96;valueForUndefinedKey:&#96; &#x2F; &#96;setNilValueForKey:&#96; 这几个方法，防止产生 &#96;NSUnknownKeyException&#96; 和 &#96;NSInvalidArgumentException&#96; 异常，引发崩溃。">
 <meta name="keywords" content="iOS,runtime">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TPreventKVC的使用和实现">
-<meta property="og:url" content="http://tbd.ink/2018/04/04/iOS/18040401.TPreventKVC的使用和实现/index/index.html">
+<meta property="og:url" content="http:&#x2F;&#x2F;tbd.ink&#x2F;2018&#x2F;04&#x2F;04&#x2F;iOS&#x2F;18040401.TPreventKVC%E7%9A%84%E4%BD%BF%E7%94%A8%E5%92%8C%E5%AE%9E%E7%8E%B0&#x2F;index&#x2F;index.html">
 <meta property="og:site_name" content="　 TBD&#39;s Blog 　">
-<meta property="og:description" content="使用`+load`方法替换NSObject的 `-setValue:forUndefinedKey:` / `valueForUndefinedKey:` / `setNilValueForKey:` 这几个方法，防止产生 `NSUnknownKeyException` 和 `NSInvalidArgumentException` 异常，引发崩溃。">
+<meta property="og:description" content="使用&#96;+load&#96;方法替换NSObject的 &#96;-setValue:forUndefinedKey:&#96; &#x2F; &#96;valueForUndefinedKey:&#96; &#x2F; &#96;setNilValueForKey:&#96; 这几个方法，防止产生 &#96;NSUnknownKeyException&#96; 和 &#96;NSInvalidArgumentException&#96; 异常，引发崩溃。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-24T09:07:29.000Z">
+<meta property="og:updated_time" content="2019-11-25T05:30:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TPreventKVC的使用和实现">
-<meta name="twitter:description" content="使用`+load`方法替换NSObject的 `-setValue:forUndefinedKey:` / `valueForUndefinedKey:` / `setNilValueForKey:` 这几个方法，防止产生 `NSUnknownKeyException` 和 `NSInvalidArgumentException` 异常，引发崩溃。">
 
-<link rel="canonical" href="http://tbd.ink/2018/04/04/iOS/18040401.TPreventKVC的使用和实现/index/">
+<link rel="canonical" href="http://tbd.ink/2018/04/04/iOS/18040401.TPreventKVC%E7%9A%84%E4%BD%BF%E7%94%A8%E5%92%8C%E5%AE%9E%E7%8E%B0/index/">
 
 
 <script id="page-configurations">
@@ -224,7 +222,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://tbd.ink/2018/04/04/iOS/18040401.TPreventKVC的使用和实现/index/">
+    <link itemprop="mainEntityOfPage" href="http://tbd.ink/2018/04/04/iOS/18040401.TPreventKVC%E7%9A%84%E4%BD%BF%E7%94%A8%E5%92%8C%E5%AE%9E%E7%8E%B0/index/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/avatars/avatar.png">
@@ -254,7 +252,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-24 09:07:29" itemprop="dateModified" datetime="2019-11-24T09:07:29+00:00">2019-11-24</time>
+                <time title="修改时间：2019-11-25 05:30:48" itemprop="dateModified" datetime="2019-11-25T05:30:48+00:00">2019-11-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -286,6 +284,7 @@
 
 <p>具体实现如下：</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">NSObject</span> (<span class="title">PreventKVC</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#pragma mark - HandleKVCErrorBlock</span></span><br><span class="line"></span><br><span class="line">+ (<span class="keyword">void</span>)setHandleKVCErrorBlock:(HandleKVCErrorBlock)handleBlock &#123;</span><br><span class="line">    objc_setAssociatedObject(<span class="keyword">self</span>, <span class="keyword">@selector</span>(handleKVCErrorBlock), handleBlock, OBJC_ASSOCIATION_RETAIN);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">+ (HandleKVCErrorBlock)handleKVCErrorBlock &#123;</span><br><span class="line">    <span class="keyword">return</span> objc_getAssociatedObject(<span class="keyword">self</span>, _cmd);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">+ (<span class="keyword">void</span>)load &#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="built_in">dispatch_once_t</span> onceToken;</span><br><span class="line">    <span class="built_in">dispatch_once</span>(&amp;onceToken, ^&#123;</span><br><span class="line">        method_exchangeImplementations(class_getInstanceMethod(<span class="keyword">self</span>, <span class="keyword">@selector</span>(setValue:forUndefinedKey:)),</span><br><span class="line">                                       class_getInstanceMethod(<span class="keyword">self</span>, <span class="keyword">@selector</span>(__t_setValue:forUndefinedKey:)));</span><br><span class="line">        method_exchangeImplementations(class_getInstanceMethod(<span class="keyword">self</span>, <span class="keyword">@selector</span>(valueForUndefinedKey:)),</span><br><span class="line">                                       class_getInstanceMethod(<span class="keyword">self</span>, <span class="keyword">@selector</span>(__t_valueForUndefinedKey:)));</span><br><span class="line">        method_exchangeImplementations(class_getInstanceMethod(<span class="keyword">self</span>, <span class="keyword">@selector</span>(setNilValueForKey:)),</span><br><span class="line">                                       class_getInstanceMethod(<span class="keyword">self</span>, <span class="keyword">@selector</span>(__t_setNilValueForKey:)));</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)__t_setValue:(<span class="keyword">nullable</span> <span class="keyword">id</span>)value forUndefinedKey:(<span class="built_in">NSString</span> *)key &#123;</span><br><span class="line">    HandleKVCErrorBlock handleBlock = [<span class="built_in">NSObject</span> handleKVCErrorBlock];</span><br><span class="line">    <span class="keyword">if</span> (handleBlock != <span class="literal">nil</span>) &#123;</span><br><span class="line">        <span class="built_in">NSArray</span> &lt;<span class="built_in">NSString</span> *&gt;*callStackSymbols = @[<span class="string">@"The system version is too low."</span>];</span><br><span class="line">        <span class="keyword">if</span> (@available(iOS <span class="number">4.0</span>, tvOS <span class="number">9.0</span>, macOS <span class="number">10.6</span>, watchOS <span class="number">2.0</span>, *)) &#123;</span><br><span class="line">            callStackSymbols = [<span class="built_in">NSThread</span> callStackSymbols];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        handleBlock([<span class="keyword">self</span> <span class="keyword">class</span>], key, KVCErrorTypeSetValueForUndefinedKey, callStackSymbols);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">nullable</span> <span class="keyword">id</span>)__t_valueForUndefinedKey:(<span class="built_in">NSString</span> *)key &#123;</span><br><span class="line">    HandleKVCErrorBlock handleBlock = [<span class="built_in">NSObject</span> handleKVCErrorBlock];</span><br><span class="line">    <span class="keyword">if</span> (handleBlock != <span class="literal">nil</span>) &#123;</span><br><span class="line">        <span class="built_in">NSArray</span> &lt;<span class="built_in">NSString</span> *&gt;*callStackSymbols = @[<span class="string">@"The system version is too low."</span>];</span><br><span class="line">        <span class="keyword">if</span> (@available(iOS <span class="number">4.0</span>, tvOS <span class="number">9.0</span>, macOS <span class="number">10.6</span>, watchOS <span class="number">2.0</span>, *)) &#123;</span><br><span class="line">            callStackSymbols = [<span class="built_in">NSThread</span> callStackSymbols];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        handleBlock([<span class="keyword">self</span> <span class="keyword">class</span>], key, KVCErrorTypeValueForUndefinedKey, callStackSymbols);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">nil</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)__t_setNilValueForKey:(<span class="built_in">NSString</span> *)key &#123;</span><br><span class="line">    HandleKVCErrorBlock handleBlock = [<span class="built_in">NSObject</span> handleKVCErrorBlock];</span><br><span class="line">    <span class="keyword">if</span> (handleBlock != <span class="literal">nil</span>) &#123;</span><br><span class="line">        <span class="built_in">NSArray</span> &lt;<span class="built_in">NSString</span> *&gt;*callStackSymbols = @[<span class="string">@"The system version is too low."</span>];</span><br><span class="line">        <span class="keyword">if</span> (@available(iOS <span class="number">4.0</span>, tvOS <span class="number">9.0</span>, macOS <span class="number">10.6</span>, watchOS <span class="number">2.0</span>, *)) &#123;</span><br><span class="line">            callStackSymbols = [<span class="built_in">NSThread</span> callStackSymbols];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        handleBlock([<span class="keyword">self</span> <span class="keyword">class</span>], key, KVCErrorTypeSetNilValueForKey, callStackSymbols);</span><br><span class="line">    &#125;</span><br><span class="line">    [<span class="keyword">self</span> setValue:<span class="literal">nil</span> forKey:key];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
+
 <h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><p>使用runtime动态替换方法防止在使用KVC的方法时候产生 <code>NSUnknownKeyException</code> &amp; <code>NSInvalidArgumentException</code> 错误引发崩溃。</p>
 <ul>
 <li><code>-valueForKey:</code></li>
@@ -296,21 +295,29 @@
 <h3 id="如何导入"><a href="#如何导入" class="headerlink" title="如何导入"></a>如何导入</h3><h4 id="源文件"><a href="#源文件" class="headerlink" title="源文件"></a>源文件</h4><p>将<code>TPreventKVC</code>文件夹内部的所有文件拖入项目中即可</p>
 <h4 id="CocoaPods"><a href="#CocoaPods" class="headerlink" title="CocoaPods"></a>CocoaPods</h4><p><a href="https://cocoapods.org/" target="_blank" rel="noopener"><code>CocoaPods</code></a>是一个Cocoa项目管理器。你可以使用以下命令去安装<code>CocoaPods</code>:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gem install cocoapods</span><br></pre></td></tr></table></figure>
+
 <p>要使用CocoaPods将<code>TPreventKVC</code>集成到您的Xcode项目中，请在<code>Podfile</code>中加入：</p>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pod <span class="string">'TPreventKVC'</span></span><br></pre></td></tr></table></figure>
+
 <p>然后运行一下命令:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pod install</span><br></pre></td></tr></table></figure>
+
 <h4 id="Carthage"><a href="#Carthage" class="headerlink" title="Carthage"></a>Carthage</h4><p><a href="https://github.com/Carthage/Carthage" target="_blank" rel="noopener"><code>Carthage</code></a>是一个去中心化的依赖管理器，它构建并提供所使用的库的framework。</p>
 <p>你可以使用 <a href="https://brew.sh/" target="_blank" rel="noopener"><code>Homebrew</code></a>并运行下面的命令安装Carthage</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ brew update</span><br><span class="line">$ brew install carthage</span><br></pre></td></tr></table></figure>
+
 <p>要将<code>TPreventKVC</code>集成到使用Carthage的Xcode项目中，请在<code>Cartfile</code>中加入：</p>
 <figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">github <span class="string">"tobedefined/TPreventKVC"</span></span><br></pre></td></tr></table></figure>
+
 <p>运行<code>carthage update</code>构建framework，并将编译的对应平台的<code>TPreventKVC.framework</code>拖入Xcode项目中。</p>
 <h3 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h3><h4 id="简单使用"><a href="#简单使用" class="headerlink" title="简单使用"></a>简单使用</h4><p>导入项目之后即可。</p>
 <h4 id="运行错误信息获取"><a href="#运行错误信息获取" class="headerlink" title="运行错误信息获取"></a>运行错误信息获取</h4><p>在APP的 <strong><code>main.m</code>文件的<code>main()</code>函数中</strong> 或者 <strong>在APP的<code>didFinishLaunching</code>方法中</strong> 加入以下代码可以获得缺失方法的具体信息：</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[<span class="built_in">NSObject</span> setHandleKVCErrorBlock:^(__<span class="keyword">unsafe_unretained</span> Class cls, <span class="built_in">NSString</span> *key, KVCErrorType errorType) &#123;</span><br><span class="line">    <span class="comment">// 在这里写你要做的事情</span></span><br><span class="line">    <span class="comment">// 比如上传到服务器或者打印log等</span></span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+
+
 <h5 id="Some-Definitions"><a href="#Some-Definitions" class="headerlink" title="Some Definitions"></a>Some Definitions</h5><p>在<code>NSObject+PreventKVC.h</code>中有以下定义</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="built_in">NS_ENUM</span>(<span class="built_in">NSUInteger</span>, KVCErrorType) &#123;</span><br><span class="line">    KVCErrorTypeSetValueForUndefinedKey     = <span class="number">1</span>,</span><br><span class="line">    KVCErrorTypeValueForUndefinedKey        = <span class="number">2</span>,</span><br><span class="line">    KVCErrorTypeSetNilValueForKey           = <span class="number">3</span>,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">void</span> (^ __<span class="keyword">nullable</span> HandleKVCErrorBlock)(Class cls, <span class="built_in">NSString</span> *key, KVCErrorType errorType);</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li><code>cls</code>: <code>Class</code>类型；为产生错误的类或对象的Class，可使用<code>NSStringFromClass(cls)</code>返回类名字符串</li>
 <li><code>key</code>: <code>NSString *</code>类型；为产生错误的Key</li>
@@ -334,7 +341,7 @@
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/2017/11/26/iOS/17112601.TPreventUnrecognizedSEL实现思路以及原理/index/" rel="next" title="TPreventUnrecognizedSEL实现思路以及原理">
+                <a href="/2017/11/26/iOS/17112601.TPreventUnrecognizedSEL%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF%E4%BB%A5%E5%8F%8A%E5%8E%9F%E7%90%86/index/" rel="next" title="TPreventUnrecognizedSEL实现思路以及原理">
                   <i class="fa fa-chevron-left"></i> TPreventUnrecognizedSEL实现思路以及原理
                 </a>
             </div>
@@ -417,7 +424,7 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/tobedefined" title="GitHub &rarr; https://github.com/tobedefined" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/tobedefined" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;tobedefined" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
   </div>
 
@@ -446,10 +453,10 @@
   </span>
   <span class="author" itemprop="copyrightHolder">TBD</span>
 </div>
-  <div class="powered-by">Hosted by <a class="theme-link" target="_blank" href="https://pages.coding.net/">Coding Pages</a> And <a class="theme-link" target="_blank" href="https://pages.github.com/">GitHub Pages</a>, Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.7.1
+  <div class="powered-by">Hosted by <a class="theme-link" target="_blank" href="https://pages.coding.net/">Coding Pages</a> And <a class="theme-link" target="_blank" href="https://pages.github.com/">GitHub Pages</a>, Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://mist.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.5.0
+  <div class="theme-info">主题 – <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.5.0
   </div>
 
         
@@ -513,7 +520,7 @@
       repo: 'tobedefined.github.io',
       owner: 'tobedefined',
       admin: ['tobedefined'],
-      id: '0688ca7b9738c8449dbb1849317806a7',
+      id: 'a91b3891d9df4c4058e29f1c8e33ea3b',
         language: '',
       distractionFreeMode: 'true'
     });

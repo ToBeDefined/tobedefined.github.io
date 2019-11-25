@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.7.1">
+<meta name="generator" content="Hexo 4.0.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
@@ -56,21 +56,19 @@
 <meta name="keywords" content="iOS,Block">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深究Block的实现">
-<meta property="og:url" content="http://tbd.ink/2017/06/28/iOS/17062803.深究Block的实现/index/index.html">
+<meta property="og:url" content="http:&#x2F;&#x2F;tbd.ink&#x2F;2017&#x2F;06&#x2F;28&#x2F;iOS&#x2F;17062803.%E6%B7%B1%E7%A9%B6Block%E7%9A%84%E5%AE%9E%E7%8E%B0&#x2F;index&#x2F;index.html">
 <meta property="og:site_name" content="　 TBD&#39;s Blog 　">
 <meta property="og:description" content="先看一下Block使用的语法声明一个block12返回值 （^名称）（参数列表） ＝ ^(参数列表)｛｝；1234int (^name)(int ,int) = ^(int a,int b)&amp;#123;          return （a+b）;&amp;#125;;作为一个函数的参数：12345678- (void)testBlock:(NSString *(返回类型) (^)(int a))s（bl">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://tbd.ink/2017/06/28/iOS/17062803.深究Block的实现/index/blcokSource1.png">
-<meta property="og:image" content="http://tbd.ink/2017/06/28/iOS/17062803.深究Block的实现/index/blcokSource2.png">
-<meta property="og:image" content="http://tbd.ink/2017/06/28/iOS/17062803.深究Block的实现/index/blcokSource3.png">
-<meta property="og:image" content="http://tbd.ink/2017/06/28/iOS/17062803.深究Block的实现/index/blcokSource4.png">
-<meta property="og:updated_time" content="2019-11-24T09:07:29.000Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;tbd.ink&#x2F;2017&#x2F;06&#x2F;28&#x2F;iOS&#x2F;17062803.%E6%B7%B1%E7%A9%B6Block%E7%9A%84%E5%AE%9E%E7%8E%B0&#x2F;index&#x2F;blcokSource1.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;tbd.ink&#x2F;2017&#x2F;06&#x2F;28&#x2F;iOS&#x2F;17062803.%E6%B7%B1%E7%A9%B6Block%E7%9A%84%E5%AE%9E%E7%8E%B0&#x2F;index&#x2F;blcokSource2.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;tbd.ink&#x2F;2017&#x2F;06&#x2F;28&#x2F;iOS&#x2F;17062803.%E6%B7%B1%E7%A9%B6Block%E7%9A%84%E5%AE%9E%E7%8E%B0&#x2F;index&#x2F;blcokSource3.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;tbd.ink&#x2F;2017&#x2F;06&#x2F;28&#x2F;iOS&#x2F;17062803.%E6%B7%B1%E7%A9%B6Block%E7%9A%84%E5%AE%9E%E7%8E%B0&#x2F;index&#x2F;blcokSource4.png">
+<meta property="og:updated_time" content="2019-11-25T05:30:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="深究Block的实现">
-<meta name="twitter:description" content="先看一下Block使用的语法声明一个block12返回值 （^名称）（参数列表） ＝ ^(参数列表)｛｝；1234int (^name)(int ,int) = ^(int a,int b)&amp;#123;          return （a+b）;&amp;#125;;作为一个函数的参数：12345678- (void)testBlock:(NSString *(返回类型) (^)(int a))s（bl">
-<meta name="twitter:image" content="http://tbd.ink/2017/06/28/iOS/17062803.深究Block的实现/index/blcokSource1.png">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;tbd.ink&#x2F;2017&#x2F;06&#x2F;28&#x2F;iOS&#x2F;17062803.%E6%B7%B1%E7%A9%B6Block%E7%9A%84%E5%AE%9E%E7%8E%B0&#x2F;index&#x2F;blcokSource1.png">
 
-<link rel="canonical" href="http://tbd.ink/2017/06/28/iOS/17062803.深究Block的实现/index/">
+<link rel="canonical" href="http://tbd.ink/2017/06/28/iOS/17062803.%E6%B7%B1%E7%A9%B6Block%E7%9A%84%E5%AE%9E%E7%8E%B0/index/">
 
 
 <script id="page-configurations">
@@ -229,7 +227,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://tbd.ink/2017/06/28/iOS/17062803.深究Block的实现/index/">
+    <link itemprop="mainEntityOfPage" href="http://tbd.ink/2017/06/28/iOS/17062803.%E6%B7%B1%E7%A9%B6Block%E7%9A%84%E5%AE%9E%E7%8E%B0/index/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/avatars/avatar.png">
@@ -259,7 +257,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-24 09:07:29" itemprop="dateModified" datetime="2019-11-24T09:07:29+00:00">2019-11-24</time>
+                <time title="修改时间：2019-11-25 05:30:48" itemprop="dateModified" datetime="2019-11-25T05:30:48+00:00">2019-11-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -290,6 +288,9 @@
 
 
 
+
+
+
 <p>然后通过底层代码分析一下block的实现</p>
 <p>iOS中有三种block，下文会细说</p>
 <ul>
@@ -299,6 +300,7 @@
 </ul>
 <p>先从最简单的看起</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> main(<span class="keyword">int</span> argc, <span class="keyword">char</span> * argv[]) &#123;</span><br><span class="line"><span class="keyword">void</span> (^block)(<span class="keyword">void</span>) = ^&#123;    </span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"1"</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>通过在终端找到这个.m文件，然后clang -rewrite-objc 代码文件名 就可以看到文件夹有个.cpp的文件，本来想变量ViewController的文件，里面用了UIKit库，编译的时候总是显示找不到，于是我编译的main.m文件</p>
 </blockquote>
@@ -306,7 +308,7 @@
 <blockquote>
 <p>block源码</p>
 </blockquote>
-<p><img src="/2017/06/28/iOS/17062803.深究Block的实现/index/blcokSource1.png" alt="blcokSource1"></p>
+<p><img src="/2017/06/28/iOS/17062803.%E6%B7%B1%E7%A9%B6Block%E7%9A%84%E5%AE%9E%E7%8E%B0/index/blcokSource1.png" alt="blcokSource1"></p>
 <p>这里先来分析一下（便于理解）：</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">void</span> _main_block_func_0(<span class="keyword">struct</span> _main_block_impl_0 *__cself) &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>((<span class="built_in">NSString</span> *)&amp;__NSConstantStringImpl__var_</span><br><span class="line">    folders_yq_s_hjnhd12x79wq1ldg1jdr_w0000gn_T_main_50d1d6_mi_0);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>可以看到，这里对应我们代码中的block中的实现，所以可以知道，block使用的匿名函数，实际上被当作一个函数来处理。不过传入的是：一个<code>_main_block_impl_0</code>类型的结构体，里面有一个<code>block_impl</code>的结构体，和一个<code>_main_block_desc_0</code>的结构体。跟着是他们的构造函数。<br>来简单看一下这个<code>_main_block_impl_0</code>结构体吧：</p>
@@ -324,45 +326,53 @@
 <p>所以，这个<code>_main_block_impl_0</code>，我们可以理解为就是一个block实例，里面的成员变量有要执行的函数的指针，和<code>isa</code>（和所有的oc对象一样），还有一个<code>size</code>。</p>
 <p>现在看一下main函数里面的内容</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> (*name)(<span class="keyword">void</span>) = ((<span class="keyword">void</span> (*)())&amp;__main_block_impl_0((<span class="keyword">void</span> *)__main_block_func_0, &amp;__main_block_desc_0_DATA));</span><br></pre></td></tr></table></figure>
+
 <p>这里执行的操作就是：初始化一个block实例，交给我们这么name名字变量，也就是用name这个指针指向这个block实例，执行的时候，直接找到这个block中的指向函数地址的指针。</p>
 <p>通过以上可以了解：block的实质，就是一个对象，包含了一个指向函数首地址的指针，和一些与自己相关的成员变量。</p>
 <p>接着看一下block访问外部变量是怎么回事，这也是我们最关心的问题。</p>
 <p>先来看一下局部变量：</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> b = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">void</span> (^block)() = ^ &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%d--%d"</span>,a,b);</span><br><span class="line">&#125;;</span><br><span class="line">block ();</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>block访问局部变量</p>
 </blockquote>
-<p><img src="/2017/06/28/iOS/17062803.深究Block的实现/index/blcokSource2.png" alt="blcokSource2"></p>
+<p><img src="/2017/06/28/iOS/17062803.%E6%B7%B1%E7%A9%B6Block%E7%9A%84%E5%AE%9E%E7%8E%B0/index/blcokSource2.png" alt="blcokSource2"></p>
 <p>首先在<code>_main_block_impl_0</code>的定义中看到，block中用到的变量被作为成员变量追加到了结构体中，</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">_main_block_impl_0(<span class="keyword">void</span> *fp, <span class="keyword">struct</span> _main_block_desc_0 *desc, <span class="keyword">int</span> _a, <span class="keyword">int</span> _b, <span class="keyword">int</span> flags=<span class="number">0</span>) : a(_a), b(_b) &#123;</span><br><span class="line">    impl.isa = &amp;_NSConcreteStackBlock;</span><br><span class="line">    impl.Flags = flags;</span><br><span class="line">    impl.FuncPtr = fp;</span><br><span class="line">    Desc = desc;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>在初始化的时候，也需要把a和b的值传入。</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> (**block)() = ((<span class="keyword">void</span> (*)())&amp;_main_block_impl_0((<span class="keyword">void</span> *)_main_block_func_0, &amp;_main_block_desc_0_DATA, a, b));</span><br></pre></td></tr></table></figure>
+
 <p>这里看到，在初始化的时候，把a，b值传入来初始化一个<code>_main_block_impl_0</code>结构体。这里需要注意，传入的是a和b的值，所以我们要在结构体中改变a和b是无效的。并且编译会报错，如果要在block中改变里面的值。有以下几种方法</p>
 <ul>
 <li>第一种方法是静态变量，全局变量</li>
 </ul>
 <p>直接上代码吧</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> global_val = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> static_global_val = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">int</span> main(<span class="keyword">int</span> argc, <span class="keyword">char</span> * argv[]) &#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> static_val = <span class="number">3</span>;</span><br><span class="line">    <span class="keyword">void</span> (^block)() = ^ &#123;</span><br><span class="line">        global_val = <span class="number">10</span>;</span><br><span class="line">        static_global_val = <span class="number">20</span>;</span><br><span class="line">        static_val = <span class="number">30</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%d-%d-%d"</span>, global_val, static_global_val, static_val);</span><br><span class="line">    block();</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%d-%d-%d"</span>, global_val, static_global_val, static_val);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>然后rewrite一下</p>
 <blockquote>
 <p>访问全局变量</p>
 </blockquote>
-<p><img src="/2017/06/28/iOS/17062803.深究Block的实现/index/blcokSource3.png" alt="blcokSource3"></p>
+<p><img src="/2017/06/28/iOS/17062803.%E6%B7%B1%E7%A9%B6Block%E7%9A%84%E5%AE%9E%E7%8E%B0/index/blcokSource3.png" alt="blcokSource3"></p>
 <p>因为这个<code>_main_block_func_0</code>能直接访问静态变量，所以可以直接访问这个变量的值，也可以改变，不用担心在调用这个函数的时候，全局变量访问不到，导致错误。所以这里面在调用全局变量的时候，就是很普通的调用全局变量，没有什么不同。</p>
 <p>局部静态变量则传的是一个指针进来。因为不用担心它在函数结束时或者其他什么地方被释放，所以可以放心的访问这个值。</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">global_val = <span class="number">10</span>;</span><br><span class="line">static_global_val = <span class="number">20</span>;</span><br><span class="line">(*static_val) = <span class="number">30</span>;</span><br></pre></td></tr></table></figure>
+
 <p>改变的是这个指针指向的值</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> (*block)() = ((<span class="keyword">void</span> (*)())&amp;__main_block_impl_0((<span class="keyword">void</span> *)_main_block_func_0, &amp;__main_block_desc_0_DATA, &amp;static_val));</span><br></pre></td></tr></table></figure>
+
 <p>可以看到，这里传的是指针。</p>
 <p><code>_main_block_func_0</code>的作用域在main函数之外，要访问这个变量，就只能传指针。</p>
 <ul>
 <li>第二种方法是给参数加<code>__block</code>属性</li>
 </ul>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> main(<span class="keyword">int</span> argc, <span class="keyword">char</span> * argv[]) &#123;</span><br><span class="line">    __block <span class="keyword">int</span> block_val = <span class="number">3</span>;</span><br><span class="line">    <span class="keyword">void</span> (^block)() = ^ &#123;        </span><br><span class="line">        block_val = <span class="number">30</span>;</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%d"</span>,block_val);</span><br><span class="line">    block ();</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%d"</span>,block_val);</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"%@"</span>,block);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>__block参数</p>
 </blockquote>
-<p><img src="/2017/06/28/iOS/17062803.深究Block的实现/index/blcokSource4.png" alt="blcokSource4"></p>
+<p><img src="/2017/06/28/iOS/17062803.%E6%B7%B1%E7%A9%B6Block%E7%9A%84%E5%AE%9E%E7%8E%B0/index/blcokSource4.png" alt="blcokSource4"></p>
 <p>可以看到里面比其他多了一个这样的结构体<code>_Block_byref_block_val_0</code></p>
 <p>里面有：</p>
 <ul>
@@ -419,7 +429,7 @@
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/2017/06/28/iOS/17062802.Objective-C中的Block/index/" rel="next" title="Objective-C中的Block">
+                <a href="/2017/06/28/iOS/17062802.Objective-C%E4%B8%AD%E7%9A%84Block/index/" rel="next" title="Objective-C中的Block">
                   <i class="fa fa-chevron-left"></i> Objective-C中的Block
                 </a>
             </div>
@@ -427,7 +437,7 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/2017/06/28/iOS/17062804.深入解构iOS的Block闭包实现原理/index/" rel="prev" title="深入解构iOS的Block闭包实现原理">
+                <a href="/2017/06/28/iOS/17062804.%E6%B7%B1%E5%85%A5%E8%A7%A3%E6%9E%84iOS%E7%9A%84Block%E9%97%AD%E5%8C%85%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/index/" rel="prev" title="深入解构iOS的Block闭包实现原理">
                   深入解构iOS的Block闭包实现原理 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
@@ -504,7 +514,7 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/tobedefined" title="GitHub &rarr; https://github.com/tobedefined" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/tobedefined" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;tobedefined" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
   </div>
 
@@ -533,10 +543,10 @@
   </span>
   <span class="author" itemprop="copyrightHolder">TBD</span>
 </div>
-  <div class="powered-by">Hosted by <a class="theme-link" target="_blank" href="https://pages.coding.net/">Coding Pages</a> And <a class="theme-link" target="_blank" href="https://pages.github.com/">GitHub Pages</a>, Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.7.1
+  <div class="powered-by">Hosted by <a class="theme-link" target="_blank" href="https://pages.coding.net/">Coding Pages</a> And <a class="theme-link" target="_blank" href="https://pages.github.com/">GitHub Pages</a>, Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://mist.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.5.0
+  <div class="theme-info">主题 – <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.5.0
   </div>
 
         
@@ -600,7 +610,7 @@
       repo: 'tobedefined.github.io',
       owner: 'tobedefined',
       admin: ['tobedefined'],
-      id: 'baa91a9b2942d9547c53f60dcbd22e47',
+      id: 'a27cb041942b26075a61f7abb637aa64',
         language: '',
       distractionFreeMode: 'true'
     });

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 3.7.1">
+<meta name="generator" content="Hexo 4.0.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
@@ -56,16 +56,14 @@
 <meta name="keywords" content="iOS,iOS11,适配">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS 11 适配注意点">
-<meta property="og:url" content="http://tbd.ink/2017/09/27/iOS/17092701.iOS 11 适配注意点/index/index.html">
+<meta property="og:url" content="http:&#x2F;&#x2F;tbd.ink&#x2F;2017&#x2F;09&#x2F;27&#x2F;iOS&#x2F;17092701.iOS%2011%20%E9%80%82%E9%85%8D%E6%B3%A8%E6%84%8F%E7%82%B9&#x2F;index&#x2F;index.html">
 <meta property="og:site_name" content="　 TBD&#39;s Blog 　">
 <meta property="og:description" content="一些关于iOS 11的新内容以及对应改变的适配方法，包括UITableView的改变，UIBarButtonItem变化，navigation的变化以及UIToolBar、UIViewController、UIScrollView（及其子类）和safeArea等。包括对第三方库MJRefresh的适配。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-24T09:07:29.000Z">
+<meta property="og:updated_time" content="2019-11-25T05:30:48.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iOS 11 适配注意点">
-<meta name="twitter:description" content="一些关于iOS 11的新内容以及对应改变的适配方法，包括UITableView的改变，UIBarButtonItem变化，navigation的变化以及UIToolBar、UIViewController、UIScrollView（及其子类）和safeArea等。包括对第三方库MJRefresh的适配。">
 
-<link rel="canonical" href="http://tbd.ink/2017/09/27/iOS/17092701.iOS 11 适配注意点/index/">
+<link rel="canonical" href="http://tbd.ink/2017/09/27/iOS/17092701.iOS%2011%20%E9%80%82%E9%85%8D%E6%B3%A8%E6%84%8F%E7%82%B9/index/">
 
 
 <script id="page-configurations">
@@ -224,7 +222,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://tbd.ink/2017/09/27/iOS/17092701.iOS 11 适配注意点/index/">
+    <link itemprop="mainEntityOfPage" href="http://tbd.ink/2017/09/27/iOS/17092701.iOS%2011%20%E9%80%82%E9%85%8D%E6%B3%A8%E6%84%8F%E7%82%B9/index/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/avatars/avatar.png">
@@ -254,7 +252,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-24 09:07:29" itemprop="dateModified" datetime="2019-11-24T09:07:29+00:00">2019-11-24</time>
+                <time title="修改时间：2019-11-25 05:30:48" itemprop="dateModified" datetime="2019-11-25T05:30:48+00:00">2019-11-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -286,14 +284,19 @@
 <ul>
 <li>添加返回section的headerView/footerView，返回nil</li>
 </ul>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">tableView</span><span class="params">(<span class="number">_</span> tableView: UITableView, heightForHeaderInSection section: Int)</span></span> -&gt; <span class="type">CGFloat</span> &#123; </span><br><span class="line">    <span class="keyword">return</span> someFloat</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">tableView</span><span class="params">(<span class="number">_</span> tableView: UITableView, viewForHeaderInSection section: Int)</span></span> -&gt; <span class="type">UIView</span>? &#123; </span><br><span class="line">    <span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">tableView</span><span class="params">(<span class="number">_</span> tableView: UITableView, heightForFooterInSection section: Int)</span></span> -&gt; <span class="type">CGFloat</span> &#123; </span><br><span class="line">    <span class="keyword">return</span> someFloat</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">tableView</span><span class="params">(<span class="number">_</span> tableView: UITableView, viewForFooterInSection section: Int)</span></span> -&gt; <span class="type">UIView</span>? &#123; </span><br><span class="line">    <span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">tableView</span><span class="params">(<span class="number">_</span> tableView: UITableView, heightForHeaderInSection section: Int)</span></span> -&gt; <span class="type">CGFloat</span> &#123; </span><br><span class="line">    <span class="keyword">return</span> someFloat</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">tableView</span><span class="params">(<span class="number">_</span> tableView: UITableView, viewForHeaderInSection section: Int)</span></span> -&gt; <span class="type">UIView?</span> &#123; </span><br><span class="line">    <span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">tableView</span><span class="params">(<span class="number">_</span> tableView: UITableView, heightForFooterInSection section: Int)</span></span> -&gt; <span class="type">CGFloat</span> &#123; </span><br><span class="line">    <span class="keyword">return</span> someFloat</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">tableView</span><span class="params">(<span class="number">_</span> tableView: UITableView, viewForFooterInSection section: Int)</span></span> -&gt; <span class="type">UIView?</span> &#123; </span><br><span class="line">    <span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>关闭header/footer预估高度，此时也会执行对应的高度方法</li>
 </ul>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tableView.estimatedSectionHeaderHeight = <span class="number">0</span></span><br><span class="line">tableView.estimatedSectionFooterHeight = <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+
 <h3 id="UIBarButtonItem"><a href="#UIBarButtonItem" class="headerlink" title="UIBarButtonItem"></a>UIBarButtonItem</h3><h4 id="距离和边界调整UIBarButtonSystemItem-fixedSpace"><a href="#距离和边界调整UIBarButtonSystemItem-fixedSpace" class="headerlink" title="距离和边界调整UIBarButtonSystemItem.fixedSpace"></a>距离和边界调整<code>UIBarButtonSystemItem.fixedSpace</code></h4><p>首先<code>UIBarButtonItem</code>设置宽度必须大于0，否则失效。也就是说之前那种使用<code>UIBarButtonSystemItem.fixedSpace</code>类型的item来设置负数宽度，调整距离的方法失效了，不可以在使用负值。如果再需要调整边界，建议使用<code>customView</code>创建<code>item</code>，去调整<code>customView</code>的内部布局</p>
-<h4 id="planText类型的Item"><a href="#planText类型的Item" class="headerlink" title="planText类型的Item"></a>planText类型的Item</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">UIBarButtonItem</span>.<span class="keyword">init</span>(title: &lt;#<span class="type">T</span>##<span class="type">String</span>?#&gt;,</span><br><span class="line">                     style: &lt;#<span class="type">T</span>##<span class="type">UIBarButtonItemStyle</span>#&gt;,</span><br><span class="line">                     target: &lt;#<span class="type">T</span>##<span class="type">Any</span>?#&gt;,</span><br><span class="line">                     action: &lt;#<span class="type">T</span>##<span class="type">Selector</span>?#&gt;)</span><br></pre></td></tr></table></figure>
+<h4 id="planText类型的Item"><a href="#planText类型的Item" class="headerlink" title="planText类型的Item"></a>planText类型的Item</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">UIBarButtonItem</span>.<span class="keyword">init</span>(title: &lt;#<span class="type">T</span>##<span class="type">String?</span>#&gt;,</span><br><span class="line">                     style: &lt;#<span class="type">T</span>##<span class="type">UIBarButtonItemStyle</span>#&gt;,</span><br><span class="line">                     target: &lt;#<span class="type">T</span>##<span class="type">Any?</span>#&gt;,</span><br><span class="line">                     action: &lt;#<span class="type">T</span>##<span class="type">Selector?</span>#&gt;)</span><br></pre></td></tr></table></figure>
+
 <p>这种直接使用字符串创建的UIBarButtonItem，在iOS11上点击的效果不再与之前相同（明显的点击变大）</p>
 <p>解决方式：</p>
 <ul>
@@ -304,12 +307,16 @@
 <p>解决方法，建议将高度超过navigationBar高度的view添加到navigationController的view上进行显示，不设置为titleView</p>
 <h4 id="UISearchController"><a href="#UISearchController" class="headerlink" title="UISearchController"></a>UISearchController</h4><p>官方不建议在 iOS11 中直接 present SearchController，建议使用<code>navigationItem</code>的<code>searchController</code> 的方式。</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> #available(iOS <span class="number">11</span>, *) &#123;</span><br><span class="line">    <span class="keyword">self</span>.navigationItem.searchController = <span class="keyword">self</span>.searchVC</span><br><span class="line">    <span class="keyword">self</span>.searchVC.isActive = <span class="literal">false</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    tableView.tableHeaderView = searchVC.searchBar</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h4 id="LargeTitle"><a href="#LargeTitle" class="headerlink" title="LargeTitle"></a>LargeTitle</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 设置是否使用大标题</span></span><br><span class="line"><span class="keyword">self</span>.navigationController?.navigationBar.prefersLargeTitles = <span class="literal">true</span></span><br><span class="line"><span class="comment">// 设置当前控制器大标题显示样式</span></span><br><span class="line"><span class="keyword">self</span>.navigationItem.largeTitleDisplayMode = .automatic</span><br></pre></td></tr></table></figure>
+
+
 <h3 id="UIToolbar"><a href="#UIToolbar" class="headerlink" title="UIToolbar"></a>UIToolbar</h3><p>UIToolBar不可以直接使用addSubview像其内部添加button这种方式了。</p>
 <p>以前可以直接添加button而不必需使用UIBarButtonItem。现在直接添加subview会出现无法点击，因为现在toolbar会有一个contentview在顶层，使得下层view事件无法触发。而item也在iOS11中被添加到contentview之中。</p>
 <p>解决方法，使用系统的api:<code>bar.setItems([item1, item2,...], animated: true)</code></p>
 <h3 id="ViewController和ScrollView"><a href="#ViewController和ScrollView" class="headerlink" title="ViewController和ScrollView"></a>ViewController和ScrollView</h3><h4 id="automaticallyAdjustsScrollViewInsets"><a href="#automaticallyAdjustsScrollViewInsets" class="headerlink" title="automaticallyAdjustsScrollViewInsets"></a><code>automaticallyAdjustsScrollViewInsets</code></h4><p>在iOS11废弃</p>
 <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@property</span>(<span class="keyword">nonatomic</span>,<span class="keyword">assign</span>) <span class="built_in">BOOL</span> automaticallyAdjustsScrollViewInsets </span><br><span class="line">API_DEPRECATED_WITH_REPLACEMENT(<span class="string">"Use UIScrollView's contentInsetAdjustmentBehavior instead"</span>, ios(<span class="number">7.0</span>,<span class="number">11.0</span>),tvos(<span class="number">7.0</span>,<span class="number">11.0</span>)); <span class="comment">// Defaults to YES</span></span><br></pre></td></tr></table></figure>
+
 <p>在iOS 11中决定tableView的内容与边缘距离的是<code>adjustedContentInset</code>属性，不再是之前的contentInset。</p>
 <h4 id="safeArea"><a href="#safeArea" class="headerlink" title="safeArea"></a>safeArea</h4><p>iOS11中，系统根据safeArea进行调整view的偏移，safeArea</p>
 <ul>
@@ -320,6 +327,7 @@
 <h4 id="adjustedContentInset"><a href="#adjustedContentInset" class="headerlink" title="adjustedContentInset"></a>adjustedContentInset</h4><p>readonly, UIEdgeInsets</p>
 <p><code>adjustedContentInset</code> 表示 <code>contentView.frame.origin</code> 偏移了 <code>scrollview.frame.origin</code> 多少；是系统计算得来的，计算方式由 <code>contentInsetAdjustmentBehavior</code> 决定。</p>
 <h4 id="contentInsetAdjustmentBehavior"><a href="#contentInsetAdjustmentBehavior" class="headerlink" title="contentInsetAdjustmentBehavior"></a>contentInsetAdjustmentBehavior</h4><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">enum</span> <span class="title">UIScrollViewContentInsetAdjustmentBehavior</span> : <span class="title">Int</span> </span>&#123;</span><br><span class="line">    <span class="keyword">case</span> automatic      <span class="comment">// Similar to .scrollableAxes, but for backward compatibility will also adjust the top &amp; bottom contentInset when the scroll view is owned by a view controller with automaticallyAdjustsScrollViewInsets = YES inside a navigation controller, regardless of whether the scroll view is scrollable</span></span><br><span class="line">    <span class="keyword">case</span> scrollableAxes <span class="comment">// Edges for scrollable axes are adjusted (i.e., contentSize.width/height &gt; frame.size.width/height or alwaysBounceHorizontal/Vertical = YES)</span></span><br><span class="line">    <span class="keyword">case</span> never          <span class="comment">// contentInset is not adjusted</span></span><br><span class="line">    <span class="keyword">case</span> always         <span class="comment">// contentInset is always adjusted by the scroll view's safeAreaInsets</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>摘自腾讯bugly技术文档</p>
 </blockquote>
@@ -337,31 +345,30 @@
 <h3 id="一些新的高度"><a href="#一些新的高度" class="headerlink" title="一些新的高度"></a>一些新的高度</h3><table>
 <thead>
 <tr>
-<th style="text-align:center">\</th>
-<th style="text-align:center">以前的iPhone</th>
-<th style="text-align:center">iPhone X</th>
+<th align="center">\</th>
+<th align="center">以前的iPhone</th>
+<th align="center">iPhone X</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:center">statusBar</td>
-<td style="text-align:center">20</td>
-<td style="text-align:center">44</td>
+<tbody><tr>
+<td align="center">statusBar</td>
+<td align="center">20</td>
+<td align="center">44</td>
 </tr>
 <tr>
-<td style="text-align:center">navigationBar</td>
-<td style="text-align:center">44</td>
-<td style="text-align:center">44</td>
+<td align="center">navigationBar</td>
+<td align="center">44</td>
+<td align="center">44</td>
 </tr>
 <tr>
-<td style="text-align:center">tabBar</td>
-<td style="text-align:center">49</td>
-<td style="text-align:center">83</td>
+<td align="center">tabBar</td>
+<td align="center">49</td>
+<td align="center">83</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h3 id="第三方库MJRefresh"><a href="#第三方库MJRefresh" class="headerlink" title="第三方库MJRefresh"></a>第三方库MJRefresh</h3><p>因为MJRefresh已经停止维护很久了。目前受影响的是使用automaticallyAdjustsScrollViewInsets的ViewController中的scrollView（tableView），可以使用下面方式解决。</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> #available(iOS <span class="number">11.0</span>, *) &#123;</span><br><span class="line">    tableView.contentInsetAdjustmentBehavior = .never</span><br><span class="line">    tableView.contentInset = <span class="type">UIEdgeInsets</span>.<span class="keyword">init</span>(top: <span class="number">64</span>, <span class="keyword">left</span>: <span class="number">0</span>, bottom: <span class="number">0</span>, <span class="keyword">right</span>: <span class="number">0</span>)</span><br><span class="line">    tableView.scrollIndicatorInsets = tableView.contentInset</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">self</span>.automaticallyAdjustsScrollViewInsets = <span class="literal">true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>update 9.28</p>
 </blockquote>
@@ -377,14 +384,14 @@
           <div class="post-tags">
               <a href="/tags/iOS/" rel="tag"># iOS</a>
               <a href="/tags/iOS11/" rel="tag"># iOS11</a>
-              <a href="/tags/适配/" rel="tag"># 适配</a>
+              <a href="/tags/%E9%80%82%E9%85%8D/" rel="tag"># 适配</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/2017/09/25/iOS/17092501.Swift 4 的改变/index/" rel="next" title="Swift 4 的改变">
+                <a href="/2017/09/25/iOS/17092501.Swift%204%20%E7%9A%84%E6%94%B9%E5%8F%98/index/" rel="next" title="Swift 4 的改变">
                   <i class="fa fa-chevron-left"></i> Swift 4 的改变
                 </a>
             </div>
@@ -392,7 +399,7 @@
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
-                <a href="/2017/11/25/iOS/17112501.TPreventUnrecognizedSEL使用方法/index/" rel="prev" title="TPreventUnrecognizedSEL使用方法">
+                <a href="/2017/11/25/iOS/17112501.TPreventUnrecognizedSEL%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/index/" rel="prev" title="TPreventUnrecognizedSEL使用方法">
                   TPreventUnrecognizedSEL使用方法 <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
@@ -470,7 +477,7 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/tobedefined" title="GitHub &rarr; https://github.com/tobedefined" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/tobedefined" title="GitHub &amp;rarr; https:&#x2F;&#x2F;github.com&#x2F;tobedefined" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
       </span>
   </div>
 
@@ -499,10 +506,10 @@
   </span>
   <span class="author" itemprop="copyrightHolder">TBD</span>
 </div>
-  <div class="powered-by">Hosted by <a class="theme-link" target="_blank" href="https://pages.coding.net/">Coding Pages</a> And <a class="theme-link" target="_blank" href="https://pages.github.com/">GitHub Pages</a>, Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.7.1
+  <div class="powered-by">Hosted by <a class="theme-link" target="_blank" href="https://pages.coding.net/">Coding Pages</a> And <a class="theme-link" target="_blank" href="https://pages.github.com/">GitHub Pages</a>, Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.0.0
   </div>
   <span class="post-meta-divider">|</span>
-  <div class="theme-info">主题 – <a href="https://mist.theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.5.0
+  <div class="theme-info">主题 – <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> v7.5.0
   </div>
 
         
@@ -566,7 +573,7 @@
       repo: 'tobedefined.github.io',
       owner: 'tobedefined',
       admin: ['tobedefined'],
-      id: 'df6eb5cb5cccffa4b317e3a1d5270164',
+      id: 'c0beef930fc684ee4a07af253e34c6e4',
         language: '',
       distractionFreeMode: 'true'
     });
