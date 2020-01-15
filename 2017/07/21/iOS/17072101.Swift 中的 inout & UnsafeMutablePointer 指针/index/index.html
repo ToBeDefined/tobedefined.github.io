@@ -52,19 +52,19 @@
   };
 </script>
 
-  <meta name="description" content="问题的产生最近在做一个需求，其中有一个场景是一个对象从外部传入一个默认的Array，对象根据一些其他的配置自动对Array进行一些处理，同时使默认的Array也作出增减操作。因为在ObjC中NSMutableArray是引用类型，所以这就很简单了，不需要做什么特殊处理。但是在Swift中Array是值类型（struct），定义如下：1234public struct Array&amp;lt;Elemen">
+  <meta name="description" content="问题的产生最近在做一个需求，其中有一个场景是一个对象从外部传入一个默认的 Array，对象根据一些其他的配置自动对 Array 进行一些处理，同时使默认的 Array 也作出增减操作。因为在ObjC中NSMutableArray是引用类型，所以这就很简单了，不需要做什么特殊处理。但是在Swift中Array是值类型（struct），定义如下：1234public struct Array&amp;lt;E">
 <meta name="keywords" content="iOS,Swift">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Swift 中的 inout &amp; UnsafeMutablePointer 指针">
 <meta property="og:url" content="http:&#x2F;&#x2F;tbd.ink&#x2F;2017&#x2F;07&#x2F;21&#x2F;iOS&#x2F;17072101.Swift%20%E4%B8%AD%E7%9A%84%20inout%20&amp;%20UnsafeMutablePointer%20%E6%8C%87%E9%92%88&#x2F;index&#x2F;index.html">
 <meta property="og:site_name" content="　 TBD&#39;s Blog 　">
-<meta property="og:description" content="问题的产生最近在做一个需求，其中有一个场景是一个对象从外部传入一个默认的Array，对象根据一些其他的配置自动对Array进行一些处理，同时使默认的Array也作出增减操作。因为在ObjC中NSMutableArray是引用类型，所以这就很简单了，不需要做什么特殊处理。但是在Swift中Array是值类型（struct），定义如下：1234public struct Array&amp;lt;Elemen">
+<meta property="og:description" content="问题的产生最近在做一个需求，其中有一个场景是一个对象从外部传入一个默认的 Array，对象根据一些其他的配置自动对 Array 进行一些处理，同时使默认的 Array 也作出增减操作。因为在ObjC中NSMutableArray是引用类型，所以这就很简单了，不需要做什么特殊处理。但是在Swift中Array是值类型（struct），定义如下：1234public struct Array&amp;lt;E">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http:&#x2F;&#x2F;tbd.ink&#x2F;2017&#x2F;07&#x2F;21&#x2F;iOS&#x2F;17072101.Swift%20%E4%B8%AD%E7%9A%84%20inout%20&amp;%20UnsafeMutablePointer%20%E6%8C%87%E9%92%88&#x2F;index&#x2F;inout1.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;tbd.ink&#x2F;2017&#x2F;07&#x2F;21&#x2F;iOS&#x2F;17072101.Swift%20%E4%B8%AD%E7%9A%84%20inout%20&amp;%20UnsafeMutablePointer%20%E6%8C%87%E9%92%88&#x2F;index&#x2F;inout2.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;tbd.ink&#x2F;2017&#x2F;07&#x2F;21&#x2F;iOS&#x2F;17072101.Swift%20%E4%B8%AD%E7%9A%84%20inout%20&amp;%20UnsafeMutablePointer%20%E6%8C%87%E9%92%88&#x2F;index&#x2F;inout3.png">
 <meta property="og:image" content="http:&#x2F;&#x2F;tbd.ink&#x2F;2017&#x2F;07&#x2F;21&#x2F;iOS&#x2F;17072101.Swift%20%E4%B8%AD%E7%9A%84%20inout%20&amp;%20UnsafeMutablePointer%20%E6%8C%87%E9%92%88&#x2F;index&#x2F;point.png">
-<meta property="og:updated_time" content="2019-11-25T05:30:48.000Z">
+<meta property="og:updated_time" content="2020-01-15T06:03:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;tbd.ink&#x2F;2017&#x2F;07&#x2F;21&#x2F;iOS&#x2F;17072101.Swift%20%E4%B8%AD%E7%9A%84%20inout%20&amp;%20UnsafeMutablePointer%20%E6%8C%87%E9%92%88&#x2F;index&#x2F;inout1.png">
 
@@ -257,7 +257,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-25 05:30:48" itemprop="dateModified" datetime="2019-11-25T05:30:48+00:00">2019-11-25</time>
+                <time title="修改时间：2020-01-15 06:03:06" itemprop="dateModified" datetime="2020-01-15T06:03:06+00:00">2020-01-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -282,19 +282,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="问题的产生"><a href="#问题的产生" class="headerlink" title="问题的产生"></a>问题的产生</h3><p>最近在做一个需求，其中有一个场景是一个对象从外部传入一个默认的Array，对象根据一些其他的配置自动对Array进行一些处理，同时使默认的Array也作出增减操作。</p><p>因为在<code>ObjC</code>中<code>NSMutableArray</code>是引用类型，所以这就很简单了，不需要做什么特殊处理。但是在<code>Swift</code>中<code>Array</code>是值类型（struct），定义如下：</p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">struct</span> <span class="title">Array</span>&lt;<span class="title">Element</span>&gt; : <span class="title">RandomAccessCollection</span>, <span class="title">MutableCollection</span> </span>&#123;</span><br><span class="line">	......</span><br><span class="line">	......</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><a id="more"></a>
+        <h3 id="问题的产生"><a href="#问题的产生" class="headerlink" title="问题的产生"></a>问题的产生</h3><p>最近在做一个需求，其中有一个场景是一个对象从外部传入一个默认的 Array，对象根据一些其他的配置自动对 Array 进行一些处理，同时使默认的 Array 也作出增减操作。</p><p>因为在<code>ObjC</code>中<code>NSMutableArray</code>是引用类型，所以这就很简单了，不需要做什么特殊处理。但是在<code>Swift</code>中<code>Array</code>是值类型（struct），定义如下：</p><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">struct</span> <span class="title">Array</span>&lt;<span class="title">Element</span>&gt; : <span class="title">RandomAccessCollection</span>, <span class="title">MutableCollection</span> </span>&#123;</span><br><span class="line">	......</span><br><span class="line">	......</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><a id="more"></a>
 
 
 
-<p>这时候如果使用ObjC的思路去做必定出错，因为Struct值类型的传递是复制值的操作，而不是传递地址。</p>
+<p>这时候如果使用 ObjC 的思路去做必定出错，因为 Struct 值类型的传递是复制值的操作，而不是传递地址。</p>
 <h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><h4 id="inout"><a href="#inout" class="headerlink" title="inout"></a><code>inout</code></h4><p>很简单的第一时间想到的是函数的传递参数使用<code>inout</code>标记（相信很多人也会这么做）就像这样：</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> inoutColors: [<span class="type">UIColor</span>] = [<span class="type">UIColor</span>.red]</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestInout</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> colors: [<span class="type">UIColor</span>]?</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">addElement</span><span class="params">(colors: <span class="keyword">inout</span> [UIColor])</span></span> &#123;</span><br><span class="line">        <span class="keyword">let</span> element = <span class="type">UIColor</span>.orange</span><br><span class="line">        colors.append(element)</span><br><span class="line">        <span class="keyword">self</span>.colors = colors</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> tio = <span class="type">TestInout</span>()</span><br><span class="line">tio.addElement(colors: &amp;inoutColors)</span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">var</span> inoutColors: [<span class="type">UIColor</span>] = [<span class="type">UIColor</span>.red]</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestInout</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> colors: [<span class="type">UIColor</span>]?</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">addElement</span><span class="params">(colors: <span class="keyword">inout</span> [UIColor])</span></span> &#123;</span><br><span class="line">        <span class="keyword">let</span> element = <span class="type">UIColor</span>.orange</span><br><span class="line">        colors.append(element)</span><br><span class="line">        <span class="keyword">self</span>.colors = colors</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> tio = <span class="type">TestInout</span>()</span><br><span class="line">tio.addElement(colors: &amp;inoutColors)</span><br></pre></td></tr></table></figure>
 
 <p>测试一下：</p>
 <img src="/2017/07/21/iOS/17072101.Swift%20%E4%B8%AD%E7%9A%84%20inout%20&%20UnsafeMutablePointer%20%E6%8C%87%E9%92%88/index/inout1.png" width="50%" height="50%">
 
 <!-- ![inout 1](index/inout1.png) -->
-
 
 <p>这时候感觉已经完美解决了？</p>
 <p>但是此时如果我们再另外一个函数中再去操作对象中的数组<code>colors</code>，并不会引起原数组<code>inoutColors</code>的改变。</p>
@@ -302,13 +301,9 @@
 <img src="/2017/07/21/iOS/17072101.Swift%20%E4%B8%AD%E7%9A%84%20inout%20&%20UnsafeMutablePointer%20%E6%8C%87%E9%92%88/index/inout2.png" width="50%" height="50%">
 <!-- ![inout 2](index/inout2.png) -->
 
-<p>这个很容易理解，官方在入门文档中就有介绍<code>inout</code>的机制，可以这么去理解：</p>
-<ul>
-<li>inout是在函数参数传递的时候复制了一份值传进来</li>
-<li>在函数内部做出改变的时候，原数据并不会改变</li>
-<li>在函数运行的时候会将函数内部改变之后的值复制出去将传入的参数原数据进行替换</li>
-</ul>
-<p>而在上面的例子中的<code>tio.colors</code>是改变之后的<code>colors</code>的一份复制，直接改变<code>tio.colors</code>并不会引起原数据<code>inoutColors</code>的改变。</p>
+<p><del>- inout 是在函数参数传递的时候复制了一份值传进来</del><br><del>- 在函数内部做出改变的时候，原数据并不会改变</del><br><del>- 在函数运行的时候会将函数内部改变之后的值复制出去将传入的参数原数据进行替换</del></p>
+<p>inout 参数在函数调用的时候传递的是该值的地址, 但是在函数体内使用的时候, 使用的是对应的真实值, 无法获取传递的地址, 将其赋值给别的变量也是一份对应值类型的拷贝.</p>
+<p>在上面的例子中的<code>tio.colors</code>是改变之后的<code>colors</code>的一份复制，直接改变<code>tio.colors</code>并不会引起原数据<code>inoutColors</code>的改变。</p>
 <p>可以测试一下，如下图：</p>
 <img src="/2017/07/21/iOS/17072101.Swift%20%E4%B8%AD%E7%9A%84%20inout%20&%20UnsafeMutablePointer%20%E6%8C%87%E9%92%88/index/inout3.png" width="50%" height="50%">
 <!-- ![inout 3](index/inout3.png) -->
@@ -321,26 +316,27 @@
 <h4 id="UnsafeMutablePointer-lt-Pointee-gt"><a href="#UnsafeMutablePointer-lt-Pointee-gt" class="headerlink" title="UnsafeMutablePointer&lt;Pointee&gt;"></a><code>UnsafeMutablePointer&lt;Pointee&gt;</code></h4><p>如何像<code>ObjC</code>中那样在<code>Swift</code>中使用<code>Array</code>？</p>
 <p>首先重新描述下具体的原因：</p>
 <ul>
-<li><code>ObjC</code>中的<code>NSMutableArray</code>是引用类型，传递的是对应array的地址（指针），对指针进行操作，会使所有的使用该内存的数据都发生改变</li>
-<li><code>Swift</code>中的<code>Array</code>是值类型，传递的参数是一份拷贝（<strong>类似</strong>于<code>ObjC</code>中的<code>Copy</code>），传递后的内存空间与原来数据的内存空间并不是一块内存，之后的改变与原来的数据都没有任何关系。</li>
+<li>主要的原因还是因为 <code>Swift</code> 中的值类型与引用类型在内存方式不同, 不能用 <code>ObjC</code> 中对 <code>NSArray</code> 的看法去看 <code>Swift</code> 中的 <code>Array</code></li>
+<li><code>ObjC</code> 中的 <code>NSMutableArray</code> 是对象，传递参数是传递对应 array 的地址（指针），对指针进行操作，会使所有的使用该内存的数据都发生改变</li>
+<li><code>Swift</code> 中的 <code>Array</code> 是值类型，传递的参数是一份拷贝（<strong>类似</strong>于<code>ObjC</code>中的<code>Copy</code>, 但是原理不同），传递后的内存空间与原来数据的内存空间并不是一块内存，之后的改变与原来的数据都没有任何关系。</li>
 </ul>
 <p>那么我们可不可以在<code>Swift</code>中传递一个指针过去呢？很多人可能觉得<code>Swift</code>没有指针，毕竟都看不到<code>*</code>了…</p>
-<p>但是<code>Swift</code>可以与<code>C</code>的的API进行无缝混合，这时候想到了<code>UnsafeMutablePointer&lt;Pointee&gt;</code> (<code>Pointee</code>是泛型)，定义如下:</p>
+<p>但是<code>Swift</code>可以与<code>C</code>的的 API 进行无缝混合，这时候想到了<code>UnsafeMutablePointer&lt;Pointee&gt;</code> (<code>Pointee</code>是泛型)，定义如下:</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">struct</span> <span class="title">UnsafeMutablePointer</span>&lt;<span class="title">Pointee</span>&gt; : <span class="title">Strideable</span>, <span class="title">Hashable</span> </span>&#123;</span><br><span class="line">	...</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>又是<code>struct</code>？不要怕，这个是存储<code>Pointee对象的地址</code>的<code>struct</code>，使用方法如下：</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sourceColors: [<span class="type">UIColor</span>] = [<span class="type">UIColor</span>.red]</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestUnsafeMutablePointer</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> colorsPoint: <span class="type">UnsafeMutablePointer</span>&lt;[<span class="type">UIColor</span>]&gt;?</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">init</span>(colorsPoint: <span class="type">UnsafeMutablePointer</span>&lt;[<span class="type">UIColor</span>]&gt;?) &#123;</span><br><span class="line">        <span class="keyword">self</span>.colorsPoint = colorsPoint</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">addElement</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">self</span>.colorsPoint?.pointee.append(<span class="type">UIColor</span>.orange)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> t = <span class="type">TestUnsafeMutablePointer</span>.<span class="keyword">init</span>(colorsPoint: &amp;sourceColors)</span><br><span class="line">t.addElement()</span><br><span class="line">t.colorsPoint?.pointee.append(<span class="type">UIColor</span>.brown)</span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sourceColors: [<span class="type">UIColor</span>] = [<span class="type">UIColor</span>.red]</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestUnsafeMutablePointer</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> colorsPoint: <span class="type">UnsafeMutablePointer</span>&lt;[<span class="type">UIColor</span>]&gt;?</span><br><span class="line"></span><br><span class="line">    <span class="keyword">init</span>(colorsPoint: <span class="type">UnsafeMutablePointer</span>&lt;[<span class="type">UIColor</span>]&gt;?) &#123;</span><br><span class="line">        <span class="keyword">self</span>.colorsPoint = colorsPoint</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">addElement</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="keyword">self</span>.colorsPoint?.pointee.append(<span class="type">UIColor</span>.orange)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> t = <span class="type">TestUnsafeMutablePointer</span>.<span class="keyword">init</span>(colorsPoint: &amp;sourceColors)</span><br><span class="line">t.addElement()</span><br><span class="line">t.colorsPoint?.pointee.append(<span class="type">UIColor</span>.brown)</span><br></pre></td></tr></table></figure>
 
 <p>测试一下：</p>
 <img src="/2017/07/21/iOS/17072101.Swift%20%E4%B8%AD%E7%9A%84%20inout%20&%20UnsafeMutablePointer%20%E6%8C%87%E9%92%88/index/point.png" width="50%" height="50%">
 <!-- ![swift point](index/point.png) -->
 
-<p>使用引用符号获取对应的变量的地址传给UnsafeMutablePointer&lt;[UIColor]&gt;类型的变量然后进行使用，pointee<br>有时候需要转换，&amp;后面如果很长需要加括号，如：</p>
+<p>使用引用符号获取对应的变量的地址传给 UnsafeMutablePointer&lt;[UIColor]&gt;类型的变量然后进行使用，pointee<br>有时候需要转换，&amp;后面如果很长需要加括号，如：</p>
 <blockquote>
 <p><code>UnsafeMutablePointer&lt;SomeType&gt;(&amp;(someObject.someAttribute))</code></p>
 </blockquote>
 <p>另外一些多线程操作也可以使用 <code>UnsafeMutablePointer&lt;SomeType&gt;</code> 这种方式会更加安全稳定。</p>
-<p>具体的关于swift中指针的用法可以参考喵神的这篇文章：<a href="https://onevcat.com/2015/01/swift-pointer/" target="_blank" rel="noopener">Swift 中的指针使用</a>(喵神这篇文章应该是基于swift 1，后续swift版本中有一些变化)</p>
+<p>具体的关于 swift 中指针的用法可以参考喵神的这篇文章：<a href="https://onevcat.com/2015/01/swift-pointer/" target="_blank" rel="noopener">Swift 中的指针使用</a>(喵神这篇文章应该是基于 swift 1，后续 swift 版本中有一些变化)</p>
 
     </div>
 
@@ -467,7 +463,7 @@
 <div class="copyright">
   
   &copy; 
-  <span itemprop="copyrightYear">2019</span>
+  <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
